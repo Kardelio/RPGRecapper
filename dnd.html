@@ -1,0 +1,94 @@
+<html>
+<head>
+	<title>RPG Recapper</title>
+	<style type="text/css">
+        body {padding: 0; margin: 0;} 
+    </style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<link rel="icon" type="image/png" href="media/favicon-196x196.png" sizes="196x196" />
+	<link rel="icon" type="image/png" href="media/favicon-96x96.png" sizes="96x96" />
+	<link rel="icon" type="image/png" href="media/favicon-32x32.png" sizes="32x32" />
+	<link rel="icon" type="image/png" href="media/favicon-128.png" sizes="128x128" />
+	<link rel="icon" type="image/png" href="media/favicon-16x16.png" sizes="16x16" />
+
+	<link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
+	<link rel="stylesheet" href="loginRegisterStyles.css">
+	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="css/spinner.css">
+
+	<script src="ConstantVariables.js"></script>
+	<script src="CampaignInformationViewer.js"></script>
+	<script src="DOMManager.js"></script>
+	<script src="CampaignDataLoader.js"></script>
+	<script src="MapIconImageLoader.js"></script>
+	<script src="MapManager.js"></script>
+	<script src="Drawer.js"></script>
+	<script src="Animator.js"></script>
+	<script src="BattleBoxAnimator.js"></script>
+	<script src="SocialBoxAnimator.js"></script>
+	<script src="MiscBoxAnimator.js"></script>
+	<script src="LevelUpAnimator.js"></script>
+	<script src="StoryManager.js"></script>
+	<script src="SoundManager.js"></script>
+	<script src="Utils.js"></script>
+	<script src="FloatingWindowManager.js"></script>
+	<script src="SideBarDrawer.js"></script>
+	<script src="EventManager.js"></script>
+	<script src="CalendarDisplayer.js"></script>	
+
+	<script src="model/MapLocation.js"></script>
+	<script src="model/TravelLine.js"></script>
+	<script src="model/Combat.js"></script>
+	<script src="model/Misc.js"></script>
+	<script src="model/Social.js"></script>
+	<script src="freshEngine.js"></script>
+</head>
+<body>
+	<div id="spinnerDiv">
+		Loading...
+		<div class="spinner">
+			<div class="rect1"></div>
+			<div class="rect2"></div>
+			<div class="rect3"></div>
+			<div class="rect4"></div>
+			<div class="rect5"></div>
+		</div>
+	</div>
+	<div id="currentInfoBlock">
+		<div id="currentInfoBlockSession" style="font-size: 50%; background-color: rgba(165,0,0,0.7);">...</div>
+		<div id="currentInfoBlockPresent" style="font-size: 50%; background-color: rgba(165,0,0,0.7);">...</div>
+		<div id="currentInfoBlockTitle">...</div>
+		<div id="currentInfoBlockSubtitle">...</div>	
+	</div>
+	<div id="controlPanel">
+		<!-- <div id="infoToDisplay"><span id="screenSizeInfo">...</span></div> -->
+		<button class="controlPanelButtons" id="buttonPopupPanelButton"><img src="media/right.png"></button>
+		<div id="buttonPopupPanel">
+			<button class="controlPanelButtons" id="helpButton">Help</button><br/>	
+			<button class="controlPanelButtons" id="mouseToggleButton">Co-ords Toggle</button><br/>
+			<button class="controlPanelButtons" id="measureToggleButton">Measure Toggle</button><br/>
+			<button class="controlPanelButtons" id="muteButton">Audio On/Off</button><br/>		
+			<button class="controlPanelButtons" id="displayAllButton">Reveal All</button><br/>
+			<button class="controlPanelButtons" id="recapAllButton">Play All</button><br/>	
+			<button class="controlPanelButtons" id="specificButton">Specific</button><br/>	
+			<button class="controlPanelButtons" id="calendarButton">Calendar</button><br/>	
+		</div>
+		<div class="controlPanelTexts campaignTitleDiv"><span id="titleOfCampaign"></span></div>
+		<div class="controlPanelTexts">Sessions: <span id="totalNumberOfSessions"></span></div>
+		<div id="heroPanel"></div>
+	</div>
+	<div id="mousePosition">X: <span id="mouseX"></span> Y: <span id="mouseY"></span><br/></div>
+	<div id="milageInformation"></div>
+	<div id="startMeasureBlock"></div>
+	<canvas id="mapCanvas"></canvas>
+	<!-- <div id="locationDataDiv"></div> -->
+	<div id="sideBar">
+		<button id="sideBarXButton" onclick="closeSideBar()">X</button>
+		<div id="eventContentholder"></div>
+		<div id="locationInfoHolder">
+			<h1 id="location_name" style="text-align: center;"></h1>
+			<div id="location_html_data"></div>
+		</div>
+	</div>
+</body>
+</html>

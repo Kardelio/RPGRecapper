@@ -1,0 +1,779 @@
+body{
+    font-family: 'Acme', sans-serif;
+    background-color: black;
+}
+
+Button{
+    font-family: 'Acme', sans-serif;
+}
+
+#usernameSpan{
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+}
+
+#logoutButton{
+    background-color: blue;
+    color: white;
+    padding-left: 5px;
+    padding-right: 5px;
+    text-decoration: none;
+}
+
+.backersZoomedOut{
+    background: url("../map.png") 100% 100%;
+    width: 1754;
+    height: 1240;
+    background-repeat: no-repeat;
+    background-position: left top; 
+    background-size: 100%;
+}
+
+#interalDrawLayer{
+    width: 100%;
+    height: 100%;
+}
+
+.backersFull{
+    background: url("../map.png") 100% 100%;
+    width: 3508;
+    height: 2480;
+    background-repeat: no-repeat;
+    background-position: left top; 
+    background-size: cover;
+}
+
+#currentInfoBlock{
+    text-align: center;
+    font-size: 300%;
+    color: white;
+    position: absolute;
+    z-index: 998;
+    width: 100%;
+}
+
+#currentInfoBlockTitle{
+    background-color: rgba(0,0,0,0.7);    
+}
+
+#currentInfoBlockSubtitle{
+    font-size: 50%;
+    background-color: rgba(0,0,0,0.7);        
+}
+
+#mousePosition{
+    position: absolute;
+    background-color: white;
+    border: 1px solid red;
+    border-radius: 3px;
+    padding: 3px;
+    z-index: 998;
+}
+
+#milageInformation{
+    position: absolute;
+    background-color: white;
+    border: 1px solid red;
+    border-radius: 3px;
+    padding: 3px;
+    z-index: 998;
+    font-size: 70%;
+}
+
+#centerCrossHair{
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    border: 2px solid rgba(0,0,255,0.5);
+}
+
+#recapButton{
+    margin-top: 100px;
+    position: absolute;
+    background-color: red;
+    z-index: 998;
+}
+
+#resetButton{
+    position: absolute;
+    background-color: red;
+    margin-top: 120px;
+    z-index: 998;
+}
+
+#drawf{
+    position: absolute;
+    background-color: red;
+    margin-top: 140px;
+    z-index: 998;
+}
+
+#destroyCan{
+    position: absolute;
+    background-color: red;
+    margin-top: 160px;
+    z-index: 998;
+}
+
+#locationDataDiv{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: white;
+}
+
+#controlPanel{
+    position: fixed;
+    background-color: rgba(0,0,0,0.2);
+    padding: 10px;
+    text-align: center;
+}
+
+#infoToDisplay{
+    border: 1px solid white;
+    background-color: #333;
+    color: white;
+    z-index: 998;
+    border-radius: 2px;
+}
+
+.controlPanelButtons{
+    font-size: 100%;
+    margin-top: 5px;
+    border-radius: 3px; 
+}
+
+.controlPanelTexts{
+    font-size: 150%;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border-radius: 3px; 
+}
+
+#titleOfCampaign{
+    font-size: 50%;
+    word-wrap: break-word;
+}
+
+.campaignTitleDiv{
+    margin-top: 20px;
+    background-color: white;
+    color: black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    max-width: 115px;
+}
+
+#totalNumberOfSessions{
+    background-color: yellow;
+    padding-left: 5px;
+    border: 2px solid black;
+    padding-right: 5px;
+    border-radius: 20px;
+}
+
+#displayAllButton{
+    border: 2px solid darkblue;
+    background-color: blue;
+    color: white;
+}
+
+#mouseToggleButton{
+    border: 1px solid white;
+    background-color: #333;
+    color: white;
+    z-index: 998;
+    border-radius: 2px;
+    font-size: 75%;
+}
+
+#startMeasureBlock{
+    position: absolute;
+    width: 5;
+    height: 5;
+    background-color: red;
+}
+
+#measureToggleButton{
+    border: 1px solid white;
+    background-color: #333;
+    color: white;
+    z-index: 998;
+    border-radius: 2px;
+    font-size: 75%;
+}
+
+#helpButton{
+    border: 1px solid white;
+    background-color: #333;
+    color: white;
+    z-index: 998;
+    border-radius: 2px;
+    font-size: 75%;
+}
+
+#muteButton{
+    border: 1px solid white;
+    background-color: #333;
+    color: white;
+    z-index: 998;
+    border-radius: 2px;
+    font-size: 75%;
+}
+
+#recapAllButton{
+    border: 2px solid darkblue;
+    background-color: blue;
+    color: white;
+}
+
+#calendarButton{
+    border: 2px solid #00541a;
+    background-color: #00a533;
+    color: white;
+}
+
+#specificButton{
+    border: 2px solid #a74500;
+    background-color: #ff6a00;
+    color: white;
+}
+
+.individualSessionButton{
+    font-size: 150%;
+    background-color: red;
+    color: white;
+    border: 2px solid darkred;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    
+}
+
+.specificSessionButton{
+    background: #ff6900;
+    margin-top: 10px;
+    border: 2px solid #a74400;
+    color: white;
+    font-size: 150%;
+    border-radius: 5px;    
+}
+
+.innerCompanionBlock{
+    background: rgba(0,0,0,0.6);
+    color: white;
+}
+
+#buttonPopupPanelButton {
+    background: black;
+    border: 2px solid white;
+}
+
+.socialOrCombatSection{
+    transition: 0.5s;    
+}
+
+.chevUp{
+    background: url(chevronUp.svg);
+}
+
+.chevDown{
+    background: url(chevronDown.svg);
+}
+
+#sideBar{
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    border-left: 2px solid black;
+    background: url("../media/parch.jpg") 100% 100%;
+}
+#sideBarXButton {
+    float: right;
+    padding: 2px;
+    color: white;
+    background-color: #deb259;
+    font-size: 150%;
+    margin: 5px;
+    border-radius: 3px;
+    border: 1px solid #ca984f;
+}
+
+body::-webkit-scrollbar { 
+    display: none; 
+}
+
+.floatingWindow::-webkit-scrollbar { 
+    display: none; 
+}
+
+.floatingWindow .levelNum{
+    font-size: 150%;
+    background-color: #048c00;
+    padding-left: 5px;
+    color: white;
+    padding-right: 5px;
+    border-radius: 5px;
+}
+
+.floatingWindow .killNum{
+    font-size: 150%;
+    background-color: red;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 50px;
+    border: 2px solid;
+}
+
+.floatingWindow p{
+    margin: 10px;
+}
+
+#eventContentholder {
+    height: 100%;
+    width: 100%;
+    margin-top: 5em;
+    display: none;
+}
+
+#locationInfoHolder {
+    height: 100%;
+    width: 100%;
+    margin-top: 5em;
+    display: none;    
+}
+
+.floatingWindow{
+    position: absolute;
+    top: 150;
+    left: 150;
+    min-width: 300px;
+    min-height: 300px;
+    max-width: 600px;
+    max-height: 600px;
+    overflow-y: scroll;
+    background: url("../media/parch.jpg");
+    border: 3px solid black;
+    border-radius: 5px;
+}
+
+#floatingWindowContents{
+    background: url("../media/parch.jpg");
+    font-family: 'Acme', sans-serif;
+}
+
+#floatingWindowHeader{
+    background-color: #1717ab;
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 3px;
+    cursor: move;
+}
+
+#floatingWindowCloseButton{
+    position: absolute;
+    background: none;
+    border: 1px solid red;
+    border-radius: 2px;
+    color: white;
+    text-align: center;
+    right: 0;
+}
+
+table {
+    table-layout: auto;
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+}
+
+
+table td {
+    border: 0px solid black;
+    border-collapse: collapse;
+}
+table .absorbing-column {
+    width: 100%;
+}
+
+#location_html_data{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.whoKilledMonsterRow{
+    padding-top: 5px;
+    text-align: center;
+    border-bottom: 2px dotted;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.calendarDayNum{
+    position: absolute;
+    font-size: 100%;
+    border: 1px solid white;
+    border-radius: 50%;
+    padding-left: 6px;
+    padding-right: 6px;
+    color: white;
+    background: #2020a5;
+}
+
+.rowCal{
+
+}
+
+.singleCal{
+    background-color: #f90000;
+    width: 100%;
+    height: 100%;
+}
+
+.colCal{
+    float: left;
+    width: 19%;
+    height: 60px;
+    background-color: #ffffff;
+    border: 1px solid black;
+}
+
+#sessionInfoBlock {
+    background: black;
+    color: white;
+    font-size: 120%;
+    padding: 5px;
+}
+
+
+.column {
+    float: left;
+    width: 50%;
+}
+
+.column25 {
+    float: left;
+    width: 25%;
+}
+.column75 {
+    float: left;
+    width: 75%;
+}
+
+.battleLocationInformationsessionNumber{
+    font-size: 200%;
+    background-color: black;
+    color: white;
+    margin: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.battleLocationInformation #enemyName{
+    background: black;
+    color: white;
+    font-size: 200%;
+    border-radius: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.battleLocationInformation #bossName{
+    background: #890085;
+    border: 5px solid black;
+    color: white;
+    font-size: 200%;
+    border-radius: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    box-shadow: 0px 0px 20px 5px rgb(255, 0, 0);
+}
+
+.battleLocationInformation #numThere{
+    background-color: red;
+    font-size: 200%;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.battleLocationInformation #numKilledAll{
+    background: green;
+    color: white;
+    font-size: 200%;
+    border: 2px solid black;
+}
+
+.battleLocationInformation #numKilled{
+    background: #ffec3b;
+    color: black;
+    font-size: 200%;
+    border: 2px solid black;
+}
+
+.oddSpeechBox{
+    margin: 10px;
+    border: 2px solid white;
+    padding: 10px;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.speechBubbleHolder{
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nameUnderSpeechImg{
+    background-color: black;
+    margin: 10px;
+    border: 2px solid white;
+    font-size: 150%;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.speech-bubble {
+    font-size: 180%;
+    padding: 5px;
+    width: 90%;
+    min-height: 10%;
+    margin-right: 65px;
+    border: 5px solid black;
+    position: relative;
+    max-width: 99%;
+    background: white;
+    border-radius: .4em;
+}
+
+.speech-bubble-small {
+    font-size: 80%;
+    padding: 5px;
+    width: 90%;
+    margin: 5px;
+    margin-right: 65px;
+    border: 2px solid black;
+    position: relative;
+    background: white;
+    border-radius: .4em;
+}
+
+.nameUnderImageSpan{
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    padding: 3px;
+    border-radius: 5px;
+}
+
+.speech-bubble:after {
+	content: '';
+	position: absolute;
+	right: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 1.688em solid transparent;
+	border-left-color: black;
+	border-right: 0;
+	border-top: 0;
+	margin-top: -0.844em;
+	margin-right: -1.687em;
+}
+
+.speech-bubble-small:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border: 0.988em solid transparent;
+    border-left-color: black;
+    border-right: 0;
+    border-top: 0;
+    margin-top: -0.844em;
+    margin-right: -0.987em;
+}
+
+#battleBox{
+    position: absolute;
+    background-color: white;
+    border-radius: 5px;
+    background: url("../media/parch.jpg");
+    border: 2px solid black;
+    z-index: 998;
+}
+
+#miscBox{
+    position: absolute;
+    background-color: white;
+    border-radius: 5px;
+    background: url("../media/parch.jpg");
+    border: 2px solid black;
+    z-index: 998;
+
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+#socialBox{
+    position: absolute;
+    background-color: white;
+    border-radius: 5px;
+    background: url("../media/parch.jpg");
+    border: 2px solid black;
+    z-index: 998;
+
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.companionNameTagSpan{
+    font-size: 120%;
+    background-color: black;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 5px;
+}
+
+.numberOfKillsSpanWithoutPosition{
+    background-color: red;
+    font-size: 150%;
+    border-radius: 10px;
+    padding-left: 5px;
+    border: 1px solid black;
+    padding-right: 5px;
+}
+
+.numberOfKillsSpan{
+    background-color: red;
+    font-size: 150%;
+    border-radius: 10px;
+    padding-left: 5px;
+    border: 1px solid black;
+    padding-right: 5px;
+    position: absolute; 
+    bottom: 0; 
+    right: 0;
+}
+
+.heroLevelSpan{
+    background-color: green;
+    font-size: 100%;
+    border-radius: 10px;
+    padding-left: 5px;
+    border: 1px solid black;
+    padding-right: 5px;
+    position: absolute; 
+    bottom: 0; 
+    left: 0;
+}
+
+.heroPanelToken{
+    box-shadow: 0px 0px 17px 5px rgba(0, 0, 0, 1);
+    border-radius: 50px;
+    position: relative; 
+    top: 0; 
+    left: 0;
+}
+
+.levelFromSpan{
+    background-color: black;
+    color: white;
+    font-size: 300%;
+    padding: 5px 20px;
+    border-radius: 50px;
+    border: 1px solid white;
+}
+.levelToSpan{
+    background: green;
+    color: white;
+    font-size: 500%;
+    padding: 10px 40px;
+    border-radius: 50px;
+    border: 5px solid #FFEB3B;
+    position: relative;
+    top: -40;
+}
+
+.levelUpText{
+    text-align: center;
+    color: white;
+    margin-top: 100px;
+    font-size: 1000%;
+    margin-bottom: 100px;
+}
+
+.shake{
+    animation-name: spaceboots;
+	animation-duration: 0.8s;
+	transform-origin:50% 50%;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+.drop{
+    animation-name: dropped;
+    animation-duration: 4s;
+}
+
+@keyframes dropped {
+    from {width: 2000px; height: 2000px;}
+    to {width: 200px; height: 200px;}
+}
+
+@keyframes spaceboots {
+	0% { -webkit-transform: translate(2px, 1px) rotate(0deg); }
+	10% { -webkit-transform: translate(-1px, -2px) rotate(-1deg); }
+	20% { -webkit-transform: translate(-3px, 0px) rotate(1deg); }
+	30% { -webkit-transform: translate(0px, 2px) rotate(0deg); }
+	40% { -webkit-transform: translate(1px, -1px) rotate(1deg); }
+	50% { -webkit-transform: translate(-1px, 2px) rotate(-1deg); }
+	60% { -webkit-transform: translate(-3px, 1px) rotate(0deg); }
+	70% { -webkit-transform: translate(2px, 1px) rotate(-1deg); }
+	80% { -webkit-transform: translate(-1px, -1px) rotate(1deg); }
+	90% { -webkit-transform: translate(2px, 2px) rotate(0deg); }
+	100% { -webkit-transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+.typewriter {
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .1em;
+    animation: 
+      typing 3.5s steps(40, end)
+}
+  
+@keyframes typing {
+from { width: 0 }
+to { width: 100% }
+}
+
+@keyframes blink-caret {
+from, to { border-color: transparent }
+50% { border-color: orange; }
+}

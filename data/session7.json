@@ -1,0 +1,251 @@
+{
+    "time_taken":{
+        "start_day": 5,
+        "end_day": 5,
+        "start_hour": 4,
+        "end_hour": 17
+    },
+    "focus_areas":[
+        {
+            "x": 719,
+            "y": 606,
+            "zoomScale": 2,
+            "waitToViewTime": 2000,
+            "title": "The Dark Woods...",
+            "events":[
+                {
+                    "type": "travel",
+                    "subtitle": "Back to the road.",
+                    "heroesPresent": ["O", "V", "S", "D"],                      
+                    "from": {
+                        "x":680,
+                        "y": 600
+                    },
+                    "to": {
+                        "x": 695,
+                        "y": 595
+                    }
+                },
+                {
+                    "type": "travel",
+                    "subtitle": "On to Wolfbane...",
+                    "heroesPresent": ["O", "V", "S", "D"],                      
+                    "from": {
+                        "x":695,
+                        "y": 595
+                    },
+                    "to": {
+                        "x": 699,
+                        "y": 601
+                    }
+                },
+                {
+                    "type": "travel",
+                    "subtitle": "Party Splits! Dwr and Vivi go to Doborah",
+                    "heroesPresent": ["V", "D"],                      
+                    "from": {
+                        "x":699,
+                        "y": 601
+                    },
+                    "to": {
+                        "x": 712,
+                        "y": 612
+                    }
+                },
+                {
+                    "type": "social",
+                    "subtitle": "Sending a message using criminals.",
+                    "sublocation": "Market of Doborah",        
+                    "atSpecificMapLocation": 17,                   
+                    "at": null,
+                    "heroesPresent": ["V", "D"],                      
+                    "npcsPresent": [
+                        "media/npcs/Assassin.png"
+                    ],
+                    "involved":[
+                        {
+                            "name": "???",
+                            "token": "media/npcs/Assassin.png",
+                            "messages":[
+                                {
+                                    "message": "You want to send a message hey? It would be my pleasure...",
+                                    "Keywords": [
+                                    ]
+                                }
+                            ] 
+                        }
+                    ]
+                },
+                {
+                    "type": "travel",
+                    "subtitle": "Orlin and Scarlett head into the woods...",
+                    "heroesPresent": ["O", "S"],                                          
+                    "from": {
+                        "x":699,
+                        "y": 601
+                    },
+                    "to": {
+                        "x": 682,
+                        "y": 649
+                    }
+                },
+                {
+                    "type": "combat",
+                    "subtitle":"The forest is alive!", 
+                    "atSpecificMapLocation": null,
+                    "at": {
+                        "x": 682,
+                        "y": 649
+                    },
+                    "heroesPresent": ["O", "S"],                                                                               
+                    "enemies":[
+                        {
+                            "name": "Vine Blight",
+                            "boss": false,                            
+                            "number": 2,
+                            "token": "media/npcs/Vine_Blight.png",
+                            "killers": [
+                                "O", "S"
+                            ]
+                        },
+                        {
+                            "name": "Needle Blight",
+                            "boss": false,                            
+                            "number": 3,
+                            "token": "media/npcs/Needle_Blight.png",
+                            "killers": [
+                                "S","S"
+                            ]
+                        }
+                    ],
+                    "data": null
+                },
+                {
+                    "type": "travel",
+                    "subtitle": "Dwr and Vivi return to find the others...",
+                    "heroesPresent": ["V", "D"],                                          
+                    "from": {
+                        "x":712,
+                        "y": 612
+                    },
+                    "to": {
+                        "x": 695,
+                        "y": 611
+                    }
+                },
+                {
+                    "type": "travel",
+                    "subtitle": "Orlin and Scarlett sneak deeper through the brush...",
+                    "heroesPresent": ["O", "S"],                                                                                                   
+                    "from": {
+                        "x":682,
+                        "y": 649
+                    },
+                    "to": {
+                        "x": 680,
+                        "y": 666
+                    }
+                },
+                {
+                    "type": "combat",
+                    "subtitle":"Sneaking through the woods...", 
+                    "atSpecificMapLocation": null,
+                    "at": {
+                        "x": 680,
+                        "y": 666
+                    },
+                    "heroesPresent": ["O", "S"],                    
+                    "enemies":[
+                        {
+                            "name": "Vine Blight",
+                            "boss": false,                            
+                            "number": 1,
+                            "token": "media/npcs/Vine_Blight.png",
+                            "killers": [
+                                "O"
+                            ]
+                        },
+                        {
+                            "name": "Needle Blight",
+                            "boss": false,                            
+                            "number": 3,
+                            "token": "media/npcs/Needle_Blight.png",
+                            "killers": [
+                                "S", "S", "O"
+                            ]
+                        }
+                    ],
+                    "data": null
+                },
+                {
+                    "type": "travel",
+                    "subtitle": "Dwr and Vivi return to find the others, but find the woods",
+                    "heroesPresent": ["V", "D"],                                                              
+                    "from": {
+                        "x":695,
+                        "y": 611
+                    },
+                    "to": {
+                        "x": 662,
+                        "y": 662
+                    }
+                },
+                {
+                    "type": "travel",
+                    "subtitle": "Orlin and Scarlett rush to help their friends...",
+                    "heroesPresent": ["O", "S"],                                        
+                    "from": {
+                        "x":680,
+                        "y": 666
+                    },
+                    "to": {
+                        "x": 662,
+                        "y": 662
+                    }
+                },
+                {
+                    "type": "combat",
+                    "subtitle":"A bite larger than they could chew...", 
+                    "atSpecificMapLocation": null,
+                    "at": {
+                        "x": 662,
+                        "y": 662
+                    },
+                    "heroesPresent": ["O", "V", "S", "D"],                                                         
+                    "enemies":[
+                        {
+                            "name": "Vine Blight",
+                            "boss": false,                            
+                            "number": 4,
+                            "token": "media/npcs/Vine_Blight.png",
+                            "killers": [
+                                "O", "O", "O"
+                            ]
+                        },
+                        {
+                            "name": "Needle Blight",
+                            "boss": false,                            
+                            "number": 4,
+                            "token": "media/npcs/Needle_Blight.png",
+                            "killers": [
+                                "S", "S", "S", "O"
+                            ]
+                        },
+                        {
+                            "name": "Shambling Mound",
+                            "boss": false,                            
+                            "number": 2,
+                            "token": "media/npcs/Shambling_Mound.png",
+                            "killers": [
+                            ]
+                        }
+                    ],
+                    "data": null
+                }
+            ]
+        }
+    ],
+    "other":123,
+    "present": ["O", "V", "S", "D"],    
+    "level": null
+}

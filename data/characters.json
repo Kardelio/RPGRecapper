@@ -1,0 +1,87 @@
+{
+    "playable": [
+        {
+            "id": "O",
+            "name": "Orlin",
+            "race": "Gnome",
+            "class": "Barbarian",
+            "background": "Feral",
+            "level": 6,
+            "token_img": "media/heroes/Orlin.png",
+            "full_img": "media/heroes/Orlin_full.jpg",
+            "information": "characterData/heroes/orlin.html",
+            "status": "alive",
+            "companions":[
+                "DOG"
+            ]             
+        },
+        {
+            "id": "S",
+            "name": "Scarlett",
+            "race": "Human",
+            "class": "Warlock",
+            "background": "Haunted One",
+            "level": 6,
+            "token_img": "media/heroes/Scarlett.png",
+            "full_img": "media/heroes/Scarlett_full.jpg",
+            "information": "characterData/heroes/scarlett.html",
+            "status": "alive",
+            "companions":[]                            
+        },
+        {
+            "id": "V",
+            "name": "Vivi",
+            "race": "Half-Elf",
+            "class": "Bard",
+            "background": "Entertainer",
+            "level": 6,
+            "token_img": "media/heroes/Vivi.png",
+            "full_img": "media/heroes/Vivi_full.jpg",
+            "information": "characterData/heroes/vivi.html",
+            "status": "dead",
+            "companions":[]                           
+        },
+        {
+            "id": "D",
+            "name": "Dwr",
+            "race": "Half-Elf",
+            "class": "Rogue",
+            "background": "Criminal",
+            "level": 6,
+            "token_img": "media/heroes/Dwr.png",
+            "full_img": "media/heroes/Dwr_full.jpg",
+            "information": "characterData/heroes/dwr.html",
+            "status": "alive",
+            "companions":[]                           
+        },
+        {
+            "id": "K",
+            "name": "Karash",
+            "race": "Aasimar",
+            "class": "Paladin",
+            "background": "Faction Agent",
+            "level": 6,
+            "token_img": "media/heroes/Karash.png",
+            "full_img": "media/heroes/Karash_full.jpg",
+            "information": "characterData/heroes/karash.html",
+            "status": "alive",
+            "companions":[]                          
+        }
+    ],
+    "companions":[
+        {
+            "id": "DOG",
+            "name": "Dog",
+            "race": "Mastiff",
+            "class": "",
+            "background": "",
+            "level": 0,
+            "token_img": "media/heroes/Dog.png",
+            "full_img": "media/heroes/Dog_full.jpg",
+            "information": "characterData/heroes/dog.html",
+            "status": "alive"           
+        }
+    ],
+    "npcs": [
+    ]
+}

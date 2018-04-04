@@ -1,0 +1,458 @@
+{
+    "locations": [
+        {
+            "name": "Salthaven",
+            "x": 503.5,
+            "y": 953.5,
+            "type": "city",
+            "id": 1
+        },
+        {
+            "name": "Wolfmaw",
+            "x": 750.5,
+            "y": 765.5,
+            "type": "city",
+            "data": "placeData/wolfmaw.html",            
+            "id": 2
+        },
+        {
+            "name": "Warlington",
+            "x": 928,
+            "y": 432.5,
+            "type": "city",
+            "id": 3
+        },
+        {
+            "name": "Raven-Wollow",
+            "x": 1125.5,
+            "y": 911.5,
+            "type": "city",
+            "data": "placeData/ravenwollow.html",            
+            "id": 4
+        },
+        {
+            "name": "Under-Rock",
+            "x": 98.5,
+            "y": 668.5,
+            "type": "city",
+            "id": 5
+        },
+        {
+            "name": "Eastdrift",
+            "x": 1597.5,
+            "y": 652.5,
+            "type": "city",
+            "id": 6
+        },
+        {
+            "name": "Starfall",
+            "x": 590.75,
+            "y": 461.25,
+            "type": "town",
+            "data": "placeData/starfall.html",
+            "id": 7
+        },
+        {
+            "name": "Knight Harbour",
+            "x": 248.75,
+            "y": 428.75,
+            "type": "town",
+            "id": 8
+        },
+        {
+            "name": "Newvault",
+            "x": 111.25,
+            "y": 803.75,
+            "type": "town",
+            "id": 9
+        },
+        {
+            "name": "Redhost Isle",
+            "x": 192.25,
+            "y": 326.75,
+            "type": "town",
+            "id": 10
+        },
+        {
+            "name": "Kelm",
+            "x": 384.25,
+            "y": 85.75,
+            "type": "town",
+            "id": 11
+        },
+        {
+            "name": "Stelholme",
+            "x": 372.25,
+            "y": 202.75,
+            "type": "town",
+            "id": 12
+        },
+        {
+            "name": "Tamro",
+            "x": 360.25,
+            "y": 605.75,
+            "type": "town",
+            "id": 13
+        },
+        {
+            "name": "Dragmire",
+            "x": 413.25,
+            "y": 959.75,
+            "type": "town",
+            "id": 14
+        },
+        {
+            "name": "Ragebirth",
+            "x": 610.25,
+            "y": 146.25,
+            "type": "town",
+            "id": 15
+        },
+        {
+            "name": "Crant",
+            "x": 679.25,
+            "y": 321.25,
+            "type": "town",
+            "id": 16
+        },
+        {
+            "name": "Doborah",
+            "x": 718.75,
+            "y": 607.25,
+            "type": "town",
+            "data": "placeData/doborah.html",
+            "id": 17
+        },
+        {
+            "name": "Faydrift",
+            "x": 842.25,
+            "y": 338.25,
+            "type": "town",
+            "id": 18
+        },
+        {
+            "name": "Worthen",
+            "x": 920.25,
+            "y": 1029.75,
+            "type": "town",
+            "id": 19
+        },
+        {
+            "name": "Pearl Hill Fort",
+            "x": 991.25,
+            "y": 1138.75,
+            "type": "town",
+            "id": 20
+        },
+        {
+            "name": "Bellpeak",
+            "x": 1081.75,
+            "y": 46.75,
+            "type": "town",
+            "id": 21
+        },
+        {
+            "name": "Ethwon",
+            "x": 1085.75,
+            "y": 221.75,
+            "type": "town",
+            "id": 22
+        },
+        {
+            "name": "Kilford",
+            "x": 1065.75,
+            "y": 423.25,
+            "type": "town",
+            "id": 23
+        },
+        {
+            "name": "Arrowhelm",
+            "x": 1031.25,
+            "y": 672.75,
+            "type": "town",
+            "id": 24
+        },
+        {
+            "name": "Nastholde",
+            "x": 1186.25,
+            "y": 181.75,
+            "type": "town",
+            "id": 25
+        },
+        {
+            "name": "Amberly",
+            "x": 1162.25,
+            "y": 286.75,
+            "type": "town",
+            "id": 26
+        },
+        {
+            "name": "Clayrock",
+            "x": 1213.25,
+            "y": 761.25,
+            "type": "town",
+            "id": 27
+        },
+        {
+            "name": "Raven-Down",
+            "x": 1185.25,
+            "y": 940.75,
+            "type": "town",
+            "id": 28
+        },
+        {
+            "name": "Northold",
+            "x": 1570.25,
+            "y": 184.75,
+            "type": "town",
+            "id": 29
+        },
+        {
+            "name": "Embermere",
+            "x": 1495.75,
+            "y": 455.75,
+            "type": "town",
+            "id": 30
+        },
+        {
+            "name": "Reavermere",
+            "x": 1602.25,
+            "y": 526.25,
+            "type": "town",
+            "id": 31
+        },
+        {
+            "name": "Fogfort",
+            "x": 1589.25,
+            "y": 579.25,
+            "type": "town",
+            "id": 32
+        },
+        {
+            "name": "Dyrasho",
+            "x": 1411.25,
+            "y": 839.25,
+            "type": "town",
+            "id": 33
+        },
+        {
+            "name": "Mudwatch",
+            "x": 1359.25,
+            "y": 1120.75,
+            "type": "town",
+            "id": 34
+        },
+        {
+            "name": "Westash",
+            "x": 1590.25,
+            "y": 824.25,
+            "type": "town",
+            "id": 35
+        },
+        {
+            "name": "Northash",
+            "x": 1629.25,
+            "y": 809.75,
+            "type": "town",
+            "id": 36
+        },
+        {
+            "name": "Southash",
+            "x": 1636.25,
+            "y": 842.25,
+            "type": "town",
+            "id": 37
+        },
+        {
+            "name": "Starbreak",
+            "x": 537.5,
+            "y": 423,
+            "type": "citadel",
+            "data": "placeData/starbreak.html",
+            "id": 38
+        },
+        {
+            "name": "The Greem",
+            "x": 1253,
+            "y": 117,
+            "type": "citadel",
+            "id": 39
+        },
+        {
+            "name": "Dusk",
+            "x": 1313,
+            "y": 441,
+            "type": "citadel",
+            "id": 40
+        },
+        {
+            "name": "Minoraus",
+            "x": 1470,
+            "y": 976.5,
+            "type": "citadel",
+            "id": 41
+        },
+        {
+            "name": "Pale",
+            "x": 148.5,
+            "y": 305,
+            "type": "ruins",
+            "id": 42
+        },
+        {
+            "name": "Lilorath",
+            "x": 314.5,
+            "y": 754,
+            "type": "ruins",
+            "id": 43
+        },
+        {
+            "name": "Old Salthaven",
+            "x": 681,
+            "y": 974.5,
+            "type": "ruins",
+            "id": 44
+        },
+        {
+            "name": "Ifelbrook",
+            "x": 782,
+            "y": 508.5,
+            "type": "ruins",
+            "id": 45
+        },
+        {
+            "name": "Spinehold",
+            "x": 924.5,
+            "y": 684,
+            "type": "ruins",
+            "id": 46
+        },
+        {
+            "name": "Dawn",
+            "x": 1247,
+            "y": 453.5,
+            "type": "ruins",
+            "id": 47
+        },
+        {
+            "name": "Peak",
+            "x": 1586.5,
+            "y": 25,
+            "type": "ruins",
+            "id": 48
+        },
+        {
+            "name": "Ergown",
+            "x": 1481,
+            "y": 91,
+            "type": "ruins",
+            "id": 49
+        },
+        {
+            "name": "The Wet Loche",
+            "x": 1561,
+            "y": 710.5,
+            "type": "ruins",
+            "id": 50
+        },
+        {
+            "name": "Castleford",
+            "x": 1695.5,
+            "y": 968.5,
+            "type": "ruins",
+            "id": 51
+        },
+        {
+            "name": "Minor Minoris",
+            "x": 1628,
+            "y": 1072,
+            "type": "ruins",
+            "id": 52
+        },
+        {
+            "name": "Marshtown",
+            "x": 1260.5,
+            "y": 623.5,
+            "type": "ruins",
+            "id": 53
+        },
+        {
+            "name": "Creeks Fall",
+            "x": 585.5,
+            "y": 541.5,
+            "type": "tower",
+            "data": "placeData/creeksfalltower.html",
+            "id": 54
+        },
+        {
+            "name": "Scorn Hill",
+            "x": 468.5,
+            "y": 664,
+            "type": "tower",
+            "id": 55
+        },
+        {
+            "name": "Illuskan Watch",
+            "x": 430.5,
+            "y": 167.5,
+            "type": "tower",
+            "id": 56
+        },
+        {
+            "name": "Grimrock",
+            "x": 196.5,
+            "y": 500,
+            "type": "tower",
+            "id": 57
+        },
+        {
+            "name": "Wilington",
+            "x": 909,
+            "y": 511.5,
+            "type": "tower",
+            "id": 58
+        },
+        {
+            "name": "The Gold Tower",
+            "x": 902.5,
+            "y": 804.5,
+            "type": "tower",
+            "id": 59
+        },
+        {
+            "name": "Taith",
+            "x": 789.5,
+            "y": 1012,
+            "type": "tower",
+            "id": 60
+        },
+        {
+            "name": "Crag",
+            "x": 1281.5,
+            "y": 914.5,
+            "type": "tower",
+            "id": 61
+        },
+        {
+            "name": "Hidden Fort",
+            "x": 1002.5,
+            "y": 142.5,
+            "type": "tower",
+            "id": 62
+        },
+        {
+            "name": "The Witches Finger",
+            "x": 1431,
+            "y": 405.5,
+            "type": "tower",
+            "id": 63
+        },
+        {
+            "name": "Ebarhoron",
+            "x": 557.5,
+            "y": 660.5,
+            "type": "city",
+            "id": 64
+        }
+    ]
+}

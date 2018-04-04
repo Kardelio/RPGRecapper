@@ -1,0 +1,13 @@
+{
+    "locations": [
+        {
+            "discovered": true,
+            "name": "Gorstag's Hideout",
+            "x": 680,
+            "y": 600,
+            "type": "unknown",
+            "data": "placeData/gorstagshideout.html",            
+            "id": "GH"
+        }
+    ]
+}

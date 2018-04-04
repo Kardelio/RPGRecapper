@@ -1,0 +1,25 @@
+{
+    "focus_areas":[
+        {
+            "x": 750,
+            "y": 750,
+            "zoomScale": 2,
+            "waitToViewTime": 2000,
+            "title": "Delivery mission for Bertram Langford",
+            "events":[
+                {
+                    "type": "misc",
+                    "subtitle": "Investigating the Peace Keep",
+                    "sublocation": "The bottom of the Peace Keep",        
+                    "atSpecificMapLocation": 2,                   
+                    "at": null,
+                    "heroesPresent": [ "S", "K"],
+                    "description": "Words words words"                                                            
+                }
+            ]
+        }
+    ],
+    "other":123,
+    "present": [0, 1, 2, 3, 4],
+    "level": null
+}

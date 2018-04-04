@@ -1,0 +1,163 @@
+{
+    "time_taken":{
+        "start_day": 5,
+        "end_day": 5,
+        "start_hour": 2,
+        "end_hour": 4
+    },
+    "focus_areas":[
+        {
+            "x": 719,
+            "y": 606,
+            "zoomScale": 2,
+            "waitToViewTime": 2000,
+            "title": "Unknown screams...",
+            "events":[
+                {
+                    "type": "travel",
+                    "subtitle": "Moving towards the source of the screams...",
+                    "heroesPresent": ["O", "V", "S", "D"],                                                           
+                    "from": {
+                        "x": 695,
+                        "y": 595
+                    },
+                    "to": {
+                        "x": 680,
+                        "y": 600
+                    }
+                },
+                {
+                    "type": "social",
+                    "subtitle": "Dicovering the devastation...",
+                    "sublocation": "Side cavern - in unknown Cave",        
+                    "atSpecificMapLocation": "GH",                   
+                    "at": null,
+                    "heroesPresent": ["O", "V", "S", "D"],                                                           
+                    "npcsPresent": [
+                        "media/npcs/Gorstag.png"
+                    ],
+                    "involved":[
+                        {
+                            "name": "???",
+                            "token": "media/npcs/Gorstag.png",
+                            "messages":[
+                                {
+                                    "message": "Is it gone? The cave! The rocks are alive!",
+                                    "Keywords": [
+                                    ]
+                                },
+                                {
+                                    "message": ".... We are .... Prisoners of Gorstag's .... ",
+                                    "Keywords": [
+                                        "Gorstag's"
+                                    ]
+                                }
+                            ] 
+                        }
+                    ]
+                },
+                {
+                    "type": "combat",
+                    "subtitle":"The cave is alive!", 
+                    "atSpecificMapLocation": "GH",
+                    "at": null,
+                    "heroesPresent": ["O", "V", "S", "D"],                     
+                    "enemies":[
+                        {
+                            "name": "Earth Elemental",
+                            "boss": false,                            
+                            "number": 1,
+                            "token": "media/npcs/Earth_Elemental.png",
+                            "killers": [
+                                "O"
+                            ]
+                        }
+                    ],
+                    "data": null
+                },
+                {
+                    "type": "social",
+                    "subtitle": "Trouble in paradise",
+                    "sublocation": "Side cavern - in unknown Cave",        
+                    "atSpecificMapLocation": "GH",                   
+                    "at": null,
+                    "heroesPresent": ["O", "V", "S", "D"],  
+                    "npcsPresent": [
+                        "media/heroes/Vivi.png",
+                        "media/heroes/Scarlett.png"
+                    ],
+                    "involved":[
+                        {
+                            "name": "Vivi",
+                            "token": "media/heroes/Vivi.png",
+                            "messages":[
+                                {
+                                    "message": "What is going on with you Scarlett? You need to tell us!",
+                                    "Keywords": [
+                                    ]
+                                }
+                            ] 
+                        },
+                        {
+                            "name": "Scarlett",
+                            "token": "media/heroes/Scarlett.png",
+                            "messages":[
+                                {
+                                    "message": "I do not know and it is my business, Back off!",
+                                    "Keywords": [
+                                    ]
+                                }
+                            ] 
+                        },
+                        {
+                            "name": "Vivi",
+                            "token": "media/heroes/Vivi.png",
+                            "messages":[
+                                {
+                                    "message": "Tell us or I will be forced to act!",
+                                    "Keywords": [
+                                    ]
+                                }
+                            ] 
+                        },
+                        {
+                            "name": "Scarlett",
+                            "token": "media/heroes/Scarlett.png",
+                            "messages":[
+                                {
+                                    "message": "*NOT SCARLETT* Give me the Orb you fucking Cunt!",
+                                    "Keywords": [
+                                    ]
+                                }
+                            ] 
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "other":123,
+    "present": ["O", "V", "S", "D"],    
+    "level": [
+        {
+            "id": "O",
+            "from": 4,
+            "to": 5
+        },
+        {
+            "id": "V",
+            "from": 4,
+            "to": 5
+        },
+        {
+            "id": "S",
+            "from": 4,
+            "to": 5
+        },
+        {
+            "id": "D",
+            "from": 4,
+            "to": 5
+        }
+    ]
+}

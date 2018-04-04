@@ -1,0 +1,184 @@
+{
+    "time_taken":{
+        "start_day": 5,
+        "end_day": 6,
+        "start_hour": 17,
+        "end_hour": 11
+    },
+    "focus_areas":[
+        {
+            "x": 717,
+            "y": 696,
+            "zoomScale": 2,
+            "waitToViewTime": 2000,
+            "title": "The walled city of Wolfmaw",
+            "events":[
+                {
+                    "type": "combat",
+                    "subtitle":"A bite larger than they could chew...", 
+                    "atSpecificMapLocation": null,
+                    "at": {
+                        "x": 662,
+                        "y": 662
+                    },
+                    "heroesPresent": ["O", "S", "D"],                    
+                    "enemies":[
+                        {
+                            "name": "Vine Blight",
+                            "boss": false,                            
+                            "number": 1,
+                            "token": "media/npcs/Vine_Blight.png",
+                            "killers": [
+                                "D"
+                            ]
+                        },
+                        {
+                            "name": "Shambling Mound",
+                            "boss": false,                            
+                            "number": 2,
+                            "token": "media/npcs/Shambling_Mound.png",
+                            "killers": [
+                            ]
+                        }
+                    ],
+                    "data": null
+                },
+                {
+                    "type": "social",
+                    "subtitle": "A helping hand...",
+                    "sublocation": "Deep in Wolfbane woods...",        
+                    "atSpecificMapLocation": null,                   
+                    "at": {
+                        "x": 662,
+                        "y": 662
+                    },
+                    "heroesPresent": ["O", "S", "D"],                                        
+                    "npcsPresent": [
+                        "media/npcs/Bink.png"
+                    ],
+                    "involved":[
+                        {
+                            "name": "Bink",
+                            "token": "media/npcs/Bink.png",
+                            "messages":[
+                                {
+                                    "message": "(Voice of Vivi) - Run!",
+                                    "Keywords": [
+                                    ]
+                                }
+                            ] 
+                        }
+                    ]
+                },
+                {
+                    "type": "social",
+                    "subtitle": "... ... Tele-Stones...",
+                    "sublocation": "A small workshop in Wolfmaw",        
+                    "atSpecificMapLocation": 2,                   
+                    "at": null,
+                    "heroesPresent": ["O", "S", "D"],                                        
+                    "npcsPresent": [
+                        "media/npcs/Bink.png",
+                        "media/npcs/Butcher_Crimperton.png"
+                    ],
+                    "involved":[
+                        {
+                            "name": "Butcher",
+                            "token": "media/npcs/Butcher_Crimperton.png",
+                            "messages":[
+                                {
+                                    "message": "Welcome travellers, Nesrakas had told me all about you guys and your assistance to the cause!",
+                                    "Keywords": [
+                                    ]
+                                },
+                                {
+                                    "message": "We are part of the United Folk and we have been posted here in Wolfmaw to find the next piece of the puzzle... Assima",
+                                    "Keywords": [
+                                        "Assima"
+                                    ]
+                                },
+                                {
+                                    "message": "Rest now and in the morning we will talk more...",
+                                    "Keywords": [
+                                    ]
+                                }
+                            ] 
+                        }
+                    ]
+                },
+                {
+                    "type": "social",
+                    "subtitle": "... ... Tele-Stones...",
+                    "sublocation": "A small workshop in Wolfmaw",        
+                    "atSpecificMapLocation": 2,                   
+                    "at": null,
+                    "heroesPresent": ["O", "S", "D"],                                                            
+                    "npcsPresent": [
+                        "media/npcs/Bink.png",
+                        "media/npcs/Butcher_Crimperton.png",
+                        "media/npcs/Chanwei.png"
+                    ],
+                    "involved":[
+                        {
+                            "name": "Butcher",
+                            "token": "media/npcs/Butcher_Crimperton.png",
+                            "messages":[
+                                {
+                                    "message": "Morning! Nesrakas wanted you to have these United folk tattoos to show that you are part of our cause and imbue you with a little extra...",
+                                    "Keywords": [
+                                    ]
+                                }
+                            ] 
+                        },
+                        {
+                            "name": "Chanwei",
+                            "token": "media/npcs/Chanwei.png",
+                            "messages":[
+                                {
+                                    "message": "Here are your tattoos travellers...",
+                                    "Keywords": [
+                                    ]
+                                }
+                            ] 
+                        },
+                        {
+                            "name": "Butcher",
+                            "token": "media/npcs/Butcher_Crimperton.png",
+                            "messages":[
+                                {
+                                    "message": "Help us find Assima and we will assist you in bringing Kado to justice and you can have the last Tele-Stones",
+                                    "Keywords": [
+                                    ]
+                                }
+                            ] 
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "other":123,
+    "present": ["O", "S", "D", "K"],    
+    "level": [
+        {
+            "id": "O",
+            "from": 5,
+            "to": 6
+        },
+        {
+            "id": "S",
+            "from": 5,
+            "to": 6
+        },
+        {
+            "id": "D",
+            "from": 5,
+            "to": 6
+        },
+        {
+            "id": "K",
+            "from": 5,
+            "to": 6
+        }
+    ]
+}

@@ -1,0 +1,122 @@
+{
+    "time_taken":{
+        "start_day": 1,
+        "end_day": 1,
+        "start_hour": 0,
+        "end_hour": 24
+    },
+    "focus_areas":[
+        {
+            "x": 566,
+            "y": 445,
+            "zoomScale": 2,
+            "waitToViewTime": 2000,
+            "title": "Delivery mission for Bertram Langford",
+            "events":[
+                {
+                    "type": "travel",
+                    "subtitle": "Road to Starfall...",
+                    "heroesPresent": ["O", "V", "S", "D"],  
+                    "from": {
+                        "x": 548.5,
+                        "y": 437
+                    },
+                    "to": {
+                        "x": 568.5,
+                        "y": 455.5
+                    }
+                },
+                {
+                    "type": "combat",
+                    "subtitle":"Goblin Ambush!",
+                    "atSpecificMapLocation": null,                
+                    "at": {
+                        "x": 568.5,
+                        "y": 455.5
+                    },
+                    "heroesPresent": ["O", "V", "S", "D"],                    
+                    "enemies":[
+                        {
+                            "name": "Goblin",
+                            "boss": false,                            
+                            "number": 4,
+                            "token": "media/npcs/Goblin.png",
+                            "killers": [
+                                "O", "O", "DOG", "D"
+                            ]
+                        }
+                    ],
+                    "data": null
+                },
+                {
+                    "type": "social",
+                    "subtitle": "Confusion with Girig",
+                    "sublocation": "After the Goblin fight...",        
+                    "atSpecificMapLocation": null,                   
+                    "at": {
+                        "x": 568.5,
+                        "y": 455.5
+                    },
+                    "heroesPresent": ["O", "V", "S", "D"],
+                    "npcsPresent": [
+                        "media/npcs/Girig_Softpaw.png"
+                    ],
+                    "involved":[
+                        {
+                            "name": "Girig Softpaw",
+                            "token": "media/npcs/Girig_Softpaw.png",
+                            "messages":[
+                                {
+                                    "message": "My apologies for misjudging you travellers! You are all very well skilled and have passed the test...",
+                                    "Keywords": []
+                                },
+                                {
+                                    "message": "Let us contine on to Starfall where you can meet Nesrakas...",
+                                    "Keywords": [
+                                        "Nesrakas"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "travel",
+                    "subtitle":"Finally arriving in Starfall...",                    
+                    "from": {
+                        "x": 568.5,
+                        "y": 455.5
+                    },
+                    "to": {
+                        "x": 583,
+                        "y": 467.5
+                    }
+                }
+            ]
+        }
+    ],
+    "other":123,
+    "present": ["O", "V", "S", "D"],    
+    "level": [
+        {
+            "id": "O",
+            "from": 1,
+            "to": 2
+        },
+        {
+            "id": "V",
+            "from": 1,
+            "to": 2
+        },
+        {
+            "id": "S",
+            "from": 1,
+            "to": 2
+        },
+        {
+            "id": "D",
+            "from": 1,
+            "to": 2
+        }
+    ]
+}
