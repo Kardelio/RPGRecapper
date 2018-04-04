@@ -7,7 +7,23 @@ I have only included them as part of the project to give the software the visual
 <br/>
 <br/>
 
-# The RPG Recapper
+Table of contents
+=================
+
+<!--ts-->
+   * [The RPG Recapper](#the-rpg-recapper)
+   * [What is it?](#what-is-it)
+   * [Note](#note)
+   * [Installation](#installation)
+   * [Using it](#using-it)
+   * [Dependencies](#dependencies)
+   * [Contributing](#contributing)
+   * [The Story](#the-story)
+<!--te-->
+<hr>
+
+The RPG Recapper
+-----
 <img style="float: left; margin: 10px;" src="./media/favicon-196x196.png">
 
 <br/>
@@ -20,24 +36,56 @@ Well look no further as the **RPG Recapper** is the tool for you...
 <br/>
 
 
-## What is the RPG Recapper?
-
+What is it
+-----
+-----
 The RPG Recapper is written in HTML, JS and CSS and is essentially a framework that is driven entirely by user created JSON objects. The RPG Recapper takes in data about your campaign, characters and locations and presents them in a visual way that lets the players and spectators interact with them. It allows you to replay your campaign from session to session to see what happened in a simple animated way.
 
-### This is a WIP (Work in progress)...
-
+Note
+-----
+-----
 This software is currently very much a work in progress. There is a TODO list as long as my arm however I am looking for people to contribute to this in order to get this to be a RPG Tool in every DM's/Player's arsenal.
-<br/>
 <br/>
 This README is also WIP...
 <br/>
-<br/>
 Also mega sorry about the messy state of the code, its currently a mess!
+<br/>
+<br/>
+Also... The tokens are cool... Yeah, I used this awesome website to create tokens from full images...
+<br/>http://rolladvantage.com/tokenstamp/<br/>
 
-## Installation
+Installation
+-----
+-----
+1. Clone the repo...
 
-## Using it...
+```
+git clone https://github.com/Kardelio/RPGRecapper.git
+```
 
+2. cd into the folder...
+
+```
+cd RPGRecapper
+```
+
+3. you then need a web server to host this content so you can use either of the following command line soultions (depending on what you already have installed), you can ofcourse use XAMPP, LAMP, MAMP or WAMP depending on OS to host it too...
+
+```
+python -m SimpleHTTPServer 8000
+    OR
+php -S localhost:8000
+```
+
+4. Then all you need to do is access it in a web browser
+
+```
+localhost:8000/dnd.html
+```
+
+Using it
+-----
+-----
 The most important folder in this entire system is the folder:
 
 > /data
@@ -60,12 +108,38 @@ This contains all of the information about your campaign overall including, the 
 
 As you can see **sessions** is an array of individual sessions and each session points to its own JSON file (also located in the /data folder). The individual session file is covered in a the section below...
 
-## The Session file...
+### The Session file...
 
+TODO write up how to use the session file
 
+TODO write up the rest of the data folder...
 
+Dependencies
+-----
+-----
+Currently the RPG Recapper uses JQuery to do a few DOM based things using the CDN link:
+```
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+```
 
-## The story behind the tool
+It also uses a google font, however this is again just to enrich the visual experience and this is subject to change.
+```
+<link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
+```
+
+Both links can be found in the main index file **dnd.html**
+
+Other than that I want to keep dependencies down to as close to 0 as possible I want it to be built without the need for dependencies (as much as possible).
+
+Contributing
+-----
+-----
+TODO fill in this in....
+
+The Story
+-----
+-----
+Here is the story TODO
 
 
 
