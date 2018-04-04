@@ -39,6 +39,8 @@ Well look no further as the **RPG Recapper** is the tool for you...
 What is it
 -----
 The RPG Recapper is written in HTML, JS and CSS and is essentially a framework that is driven entirely by user created JSON objects. The RPG Recapper takes in data about your campaign, characters and locations and presents them in a visual way that lets the players and spectators interact with them. It allows you to replay your campaign from session to session to see what happened in a simple animated way.
+<div style="text-align: center;"><img src="media/example.png" title="My sexy map" width="800"></div>
+
 
 Note
 -----
