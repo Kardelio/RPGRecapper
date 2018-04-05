@@ -122,7 +122,7 @@ class CampaignDataLoader{
         $.ajaxSetup({cache:false});
         $.ajax({
             type: 'GET',
-            url: "data/index.json",
+            url: "data/campaign.json",
             dataType: 'JSON',
             success:function(data){
                 self.fullCampaignData = data;

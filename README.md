@@ -90,7 +90,7 @@ The most important folder in this entire system is the folder:
 
 Inside of that folder you will find a whole bunch of JSON files, the main one being: 
 
-> /data/index.json
+> /data/campaign.json
 
 This contains all of the information about your campaign overall including, the map to use, the campaign name and the PCs in the campaign. However most importantly it contains data about the individual sessions that your campaign has had and these are consituted as literally sit down sessions from start to finish that you and your party have had. 
 
@@ -124,7 +124,7 @@ It also uses a google font, however this is again just to enrich the visual expe
 <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
 ```
 
-Both links can be found in the main index file **dnd.html**
+Both links can be found in the main campaign file **dnd.html**
 
 Other than that I want to keep dependencies down to as close to 0 as possible I want it to be built without the need for dependencies (as much as possible).
 
