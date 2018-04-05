@@ -1,6 +1,6 @@
 ## IMPORTANT: Notice on media content...
 
-hello
+hello BEN
 
 So most of (if not all) the images and audio files that are included in this project have been taken from somewhere else on the wonderful web, I in no way take any credit for these wonderful works that others have done (except for my awesome map.png) 
 <div style="text-align: center;"><img src="media/map.png" title="My sexy map" width="300"></div>
