@@ -1,5 +1,7 @@
 ## IMPORTANT: Notice on media content...
 
+hello BEN
+
 So most of (if not all) the images and audio files that are included in this project have been taken from somewhere else on the wonderful web, I in no way take any credit for these wonderful works that others have done (except for my awesome map.png) 
 <div style="text-align: center;"><img src="media/map.png" title="My sexy map" width="300"></div>
 I have only included them as part of the project to give the software the visual and audio elements it needs in order to showcase its abilities. The idea is that when you take the software and use it for your campaign that you would replace the existing 'showcase' media with your own from your campaign... In order to test the software I actually needed an existing campaign to see if it did what I thought it would do so the data that is included is actually the data from my current DnD campaign that I am running, so thats nice.
@@ -90,7 +92,7 @@ The most important folder in this entire system is the folder:
 
 Inside of that folder you will find a whole bunch of JSON files, the main one being: 
 
-> /data/index.json
+> /data/campaign.json
 
 This contains all of the information about your campaign overall including, the map to use, the campaign name and the PCs in the campaign. However most importantly it contains data about the individual sessions that your campaign has had and these are consituted as literally sit down sessions from start to finish that you and your party have had. 
 
@@ -124,7 +126,7 @@ It also uses a google font, however this is again just to enrich the visual expe
 <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
 ```
 
-Both links can be found in the main index file **dnd.html**
+Both links can be found in the main campaign file **dnd.html**
 
 Other than that I want to keep dependencies down to as close to 0 as possible I want it to be built without the need for dependencies (as much as possible).
 
@@ -137,4 +139,4 @@ The Story
 Here is the story TODO
 
 
-
+test
