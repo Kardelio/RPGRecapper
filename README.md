@@ -1,5 +1,7 @@
 ## IMPORTANT: Notice on media content...
 
+hello
+
 So most of (if not all) the images and audio files that are included in this project have been taken from somewhere else on the wonderful web, I in no way take any credit for these wonderful works that others have done (except for my awesome map.png) 
 <div style="text-align: center;"><img src="media/map.png" title="My sexy map" width="300"></div>
 I have only included them as part of the project to give the software the visual and audio elements it needs in order to showcase its abilities. The idea is that when you take the software and use it for your campaign that you would replace the existing 'showcase' media with your own from your campaign... In order to test the software I actually needed an existing campaign to see if it did what I thought it would do so the data that is included is actually the data from my current DnD campaign that I am running, so thats nice.
