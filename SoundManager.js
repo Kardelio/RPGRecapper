@@ -1,10 +1,11 @@
 class SoundManager{
     constructor(){
-        this.backgroundMusic = new Audio("media/audio/back.mp3");
-
-        this.walkingSoundEffect = new Audio('media/audio/walking.wav');
-        this.combatSoundEffect = new Audio('media/audio/fightO.wav');
-        this.socialSoundEffect = new Audio('media/audio/talking.wav');
+        this.campaignSoundObj = campaignLoader.getSoundData();
+        console.log(this.campaignSoundObj);
+        this.backgroundMusic = new Audio(this.campaignSoundObj.background);
+        this.walkingSoundEffect = new Audio(this.campaignSoundObj.travel_event);
+        this.combatSoundEffect = new Audio(this.campaignSoundObj.combat_event);
+        this.socialSoundEffect = new Audio(this.campaignSoundObj.social_event);
 
         this.currentSoundEffect;
     
