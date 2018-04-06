@@ -6,7 +6,7 @@ class LevelUpAnimator{
         this.fadeInToIter = 0;
 
         this.currentLUObj;
-        this.audio = new Audio('media/audio/lvl.wav');
+        this.audio = new Audio(campaignLoader.getSoundData().level_up_event);
         var self = this;
         this.audio .addEventListener("ended", function(){
             console.log("ended");
