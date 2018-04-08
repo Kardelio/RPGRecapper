@@ -57,7 +57,7 @@ class DOMManager{
                 singleHero.style.position = "relative";
                 singleHero.setAttribute("hero",hro.id);
                     var hroImg = document.createElement("img");
-                        hroImg.width = 80;
+                        hroImg.width = 60;
                         hroImg.src = hro.token_img;
                         hroImg.className += "heroPanelToken";
                     var hroLvl = document.createElement("span");
@@ -65,7 +65,7 @@ class DOMManager{
                         hroLvl.innerHTML ="Lvl: "+campaignLoader.getCharacterById(hro.id).level;
                     var hroKill = document.createElement("span");
                         hroKill.className += "numberOfKillsSpan";
-                        hroKill.innerHTML += "<img src='media/sword.svg' width='18'/> "+campaignLoader.calculateNumberOfKillsById(hro.id);
+                        hroKill.innerHTML += "<i class='fa fa-bolt'></i> "+campaignLoader.calculateNumberOfKillsById(hro.id);
                 singleHero.appendChild(hroImg);
                 if(hro.level > 0)
                 {
@@ -295,12 +295,31 @@ class DOMManager{
 
         document.getElementById("specificButton").onclick = function() {
             var display = storyManager.loadSpecificButtons();
-            floatingWindowManager.showWindow("Specific Sessions...",display);
+            floatingWoindowManager.showWindow("Specific Sessions...",display);
         };
 
         document.getElementById("calendarButton").onclick = function() {
             var display = new CalendarDisplayer().getCalendarToDisplay();
             floatingWindowManager.showWindow("Calendar",display,500);
+        };
+
+        document.getElementById("controlPanelCollapser").onclick = function(){
+            console.log("Collapser Clicked...");
+            console.log(this);
+            var cp = $("#controlPanel")[0];
+            
+            if(this.getAttribute("data-collapsed") == "true"){
+                cp.style.width = "auto";                
+                cp.style.padding = 10;                
+                this.setAttribute("data-collapsed",false);
+                this.innerHTML = "<i class='fa fa-chevron-left'></i>";
+            }
+            else{
+                cp.style.width = 0;                
+                cp.style.padding = 0;                
+                this.setAttribute("data-collapsed",true);
+                this.innerHTML = "<i class='fa fa-chevron-right'></i>";                
+            }
         };
         
 
