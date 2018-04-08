@@ -10,7 +10,7 @@ class SideBarDrawer{
         
         for(var i = 0; i < socials.length; i++)
         {
-            outMore += "<span class='battleLocationInformationsessionNumber' onclick='SideBarDrawer.toggleSection(\"s" + i + "\")'><img src='media/up.png' id='arrs"+i+"'></img>  Session: "+socials[i].sessionNum+"<span style='font-size: 50%;'> - Social</span></span>";                
+            outMore += "<span class='battleLocationInformationsessionNumber' onclick='SideBarDrawer.toggleSection(\"s" + i + "\")'><i class='fa fa-chevron-up' id='arrs"+i+"'></i>  Session: "+socials[i].sessionNum+"<span style='font-size: 50%;'> - Social</span></span>";                
             outMore += "<div style='width: 100%; height: 10px; background-color: black; margin-bottom: 5px;'></div>";
             outMore += "<div class='socialOrCombatSection' id='s"+i+"' style='display: block;'>";            
             socials[i].eventData.involved.forEach(element => {  
@@ -41,12 +41,12 @@ class SideBarDrawer{
         if(document.getElementById(id).style.display == "block")
         {
             document.getElementById(id).style.display = "none";
-            document.getElementById("arr"+id).src = "media/down.png";
+            document.getElementById("arr"+id).className = "fa fa-chevron-down";
 
         }
         else{
             document.getElementById(id).style.display = "block";
-            document.getElementById("arr"+id).src = "media/up.png";
+            document.getElementById("arr"+id).className = "fa fa-chevron-up";
         }
     }
 
@@ -56,7 +56,7 @@ class SideBarDrawer{
         
         for(var i = 0; i < miscData.length; i++)
         {
-            outMore += "<span class='battleLocationInformationsessionNumber' onclick='SideBarDrawer.toggleSection(\"m" + i + "\")'><img src='media/up.png' id='arrm"+i+"'></img>  Session: "+miscData[i].sessionNum+"<span style='font-size: 50%;'> - Misc</span></span>";                   
+            outMore += "<span class='battleLocationInformationsessionNumber' onclick='SideBarDrawer.toggleSection(\"m" + i + "\")'><i class='fa fa-chevron-up' id='arrm"+i+"'></i> Session: "+miscData[i].sessionNum+"<span style='font-size: 50%;'> - Misc</span></span>";                   
             outMore += "<div style='width: 100%; height: 10px; background-color: black; margin-bottom: 5px;'></div>";
             outMore += "<div class='socialOrCombatSection' id='m"+i+"' style='display: block; text-align: center;'>";
             outMore += "<div class='row battleLocationInformation' style='text-align: center; padding-bottom: 10px; border-bottom: 2px dotted;'>";        
@@ -83,7 +83,7 @@ class SideBarDrawer{
         
         for(var i = 0; i < battleLocations.length; i++)
         {
-            outMore += "<span class='battleLocationInformationsessionNumber' onclick='SideBarDrawer.toggleSection(\"b" + i + "\")'><img src='media/up.png' id='arrb"+i+"'></img>  Session: "+battleLocations[i].sessionNum+"<span style='font-size: 50%;'> - Combat</span></span>";                   
+            outMore += "<span class='battleLocationInformationsessionNumber' onclick='SideBarDrawer.toggleSection(\"b" + i + "\")'><i class='fa fa-chevron-up' id='arrb"+i+"'></i>   Session: "+battleLocations[i].sessionNum+"<span style='font-size: 50%;'> - Combat</span></span>";                   
             outMore += "<div style='width: 100%; height: 10px; background-color: black; margin-bottom: 5px;'></div>";
             outMore += "<div class='socialOrCombatSection' id='b"+i+"' style='display: block;'>";
             
