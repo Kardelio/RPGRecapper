@@ -1,0 +1,42 @@
+<html>
+<head>
+	<title>RPG Recapper</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="icon" type="image/png" href="media/favicon-196x196.png" sizes="196x196" />
+	<link rel="icon" type="image/png" href="media/favicon-96x96.png" sizes="96x96" />
+	<link rel="icon" type="image/png" href="media/favicon-32x32.png" sizes="32x32" />
+	<link rel="icon" type="image/png" href="media/favicon-128.png" sizes="128x128" />
+	<link rel="icon" type="image/png" href="media/favicon-16x16.png" sizes="16x16" />
+
+	<link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
+	<link rel="stylesheet" href="css/editStyles.css">
+
+	<script src="editCampaignEngine.js"></script>	
+
+<body>
+	<div>
+	<button class="tablink" onclick="openPage('Campaign', this, 'red')" id="defaultOpen">Campaign</button>
+	<button class="tablink" onclick="openPage('Sessions', this, 'green')">Sessions</button>
+	<button class="tablink" onclick="openPage('Characters', this, 'green')">Characters</button>
+	<button class="tablink">Extra</button>
+	<div style="clear: both"></div>
+</div>
+	<div id="Campaign" class="tabcontent">
+		<h3>Campaign</h3>
+		<p>Home is where the heart is..</p>
+	</div>
+	
+	<div id="Sessions" class="tabcontent">
+		<h3>Sessions</h3>
+		<p>Some news this fine day!</p> 
+	</div>
+
+	<div id="Characters" class="tabcontent">
+		<h3>Characters</h3>
+		<p>Some news this fine day!</p> 
+	</div>
+ 
+</body>
+</html>
