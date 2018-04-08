@@ -64,23 +64,6 @@ class CampaignDataLoader{
         };
     }
 
-    //DEPRECATED -----
-    getHeroDataById(id){
-        var hros = this.fullCampaignData.heroes.alive;
-        for(var i = 0; i < hros.length; i++)
-        {
-            if(hros[i].id == id)
-            {
-
-                return hros[i];
-            }
-        }
-        return {
-            name: "unknown",
-            token_img: "media/Random.png"
-        };
-    }
-
     loadCharacterData(){
         var self = this;
         $.getJSON(self.fullCampaignData.characters, function (result) {
