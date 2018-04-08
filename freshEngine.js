@@ -10,7 +10,7 @@ var mapManager = new MapManager();
 var drawer = new Drawer();
 var storyManager = new StoryManager();
 var animator = new Animator();
-var soundManager = new SoundManager();
+var soundManager;
 var floatingWindowManager = new FloatingWindowManager();
 //NEW:
 var eventManager = new EventManager();
@@ -35,6 +35,7 @@ function init(){
 }
 
 function campaignLoaderHasFinishedLoadingCampaignData(){
+    soundManager = new SoundManager();
     console.log("Finished loading the campaign data, stored in: ", campaignLoader.getFullCampaignData());
     console.log("The Session data is extracted to: ", campaignLoader.getAllSessionObjects());
     domManager.setVisibleCampaignDetails();

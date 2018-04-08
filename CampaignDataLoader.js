@@ -37,6 +37,10 @@ class CampaignDataLoader{
         return this.fullCampaignData;
     }
 
+    getSoundData(){
+        return this.fullCampaignData.sounds;
+    }
+
     getAllSessionObjects(){
         return this.allSessionObjects;
     }

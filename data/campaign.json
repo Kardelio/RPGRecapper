@@ -15,6 +15,13 @@
         "data/session9.json" 
     ],
     "characters": "data/characters.json",
+    "sounds":{
+        "background": "media/audio/back.mp3",
+        "combat_event": "media/audio/fightO.wav",
+        "social_event": "media/audio/talking.wav",
+        "travel_event": "media/audio/walking.wav",
+        "level_up_event": "media/audio/lvl.wav"        
+    },
     "time_info":{
         "days_in_a_week": 5
     },
