@@ -10,8 +10,8 @@ var mapManager = new MapManager();
 var drawer = new Drawer();
 var storyManager = new StoryManager();
 var animator = new Animator();
-var soundManager;
 var floatingWindowManager = new FloatingWindowManager();
+var soundManager = null;
 //NEW:
 var eventManager = new EventManager();
 

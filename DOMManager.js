@@ -37,7 +37,8 @@ class DOMManager{
     }
 
     setVisibleCampaignDetails(){
-        document.getElementById("titleOfCampaign").innerHTML = campaignLoader.getFullCampaignData().campaign_title;
+        //TODO: Removed title of campaign!
+        //document.getElementById("titleOfCampaign").innerHTML = campaignLoader.getFullCampaignData().campaign_title;
         document.getElementById("totalNumberOfSessions").innerHTML = campaignLoader.getFullCampaignData().sessions.length;
     }
 
@@ -295,7 +296,7 @@ class DOMManager{
 
         document.getElementById("specificButton").onclick = function() {
             var display = storyManager.loadSpecificButtons();
-            floatingWoindowManager.showWindow("Specific Sessions...",display);
+            floatingWindowManager.showWindow("Specific Sessions...",display);
         };
 
         document.getElementById("calendarButton").onclick = function() {
@@ -304,8 +305,6 @@ class DOMManager{
         };
 
         document.getElementById("controlPanelCollapser").onclick = function(){
-            console.log("Collapser Clicked...");
-            console.log(this);
             var cp = $("#controlPanel")[0];
             
             if(this.getAttribute("data-collapsed") == "true"){
