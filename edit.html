@@ -24,17 +24,24 @@
 	<div style="clear: both"></div>
 </div>
 	<div id="Campaign" class="tabcontent">
-		<h3>Campaign</h3>
+		<h3 class="section_title">Campaign Information</h3>
+		<button id="save_btn_campaign" class="submitButton" onclick="saveDetails()">Save</button>
+		<div id="campaign_information_div">
+			<label>Campaign Title</label><br/>
+			<input type="text" id="campaign_title" onchange="updateData()"/><!--value=""-->
+		</div>
 		<p>Home is where the heart is..</p>
 	</div>
 	
 	<div id="Sessions" class="tabcontent">
 		<h3>Sessions</h3>
+		<button id="save_btn_sessions" class="submitButton">Save</button>
 		<p>Some news this fine day!</p> 
 	</div>
 
 	<div id="Characters" class="tabcontent">
 		<h3>Characters</h3>
+		<button id="save_btn_characters" class="submitButton">Save</button>
 		<p>Some news this fine day!</p> 
 	</div>
  

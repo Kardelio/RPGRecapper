@@ -26,6 +26,11 @@ function openPage(pageName,elmnt,color) {
     elmnt.style.color = "#000";
 }
 
+function populateDataInDOM(){
+	console.log("Populating the DOM now");
+	document.getElementById("campaign_title").value = fullCampaignData.campaign_title;
+}
+
 function init(){
     loadCampaign();
 }
@@ -35,6 +40,25 @@ function campaignLoaderHasFinishedLoadingCampaignData(){
     console.log(fullCampaignData);
     console.log(allSessionObjects);
     console.log(allCharacterData);
+	populateDataInDOM();
+}
+
+function updateData(){
+    console.log("Changing data");
+    fullCampaignData.campaign_title = document.getElementById("campaign_title").value; 
+    console.log("Data: ", fullCampaignData);    
+}
+
+function saveDetails(){
+    $.ajax({
+        type: "GET",
+        dataType : 'json',
+        async: false,
+        url: 'phpscripts/saveData.php',
+        data: { data: JSON.stringify(fullCampaignData) },
+        success: function () {alert("Thanks!"); },
+        failure: function() {alert("Error!");}
+    });
 }
 
 function loadCampaign(){
