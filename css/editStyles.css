@@ -1,11 +1,32 @@
-.section_title{
-	background-color: rgba(0,0,0,0.4);
-    color: white;
-    padding: 10px;
+.data_single_label{
+	font-size: 120%;
 }
 
-.submitButton{
-	background-color: #00bb00; 
+.single_data_div{
+	margin: 10px;
+}
+
+.RPG_data_collector_area {
+	background-color: rgba(0,0,0,0.3);
+    padding: 10px;
+    color: white;
+}
+
+.successButton{
+	background-color: #00bb00; 	
+	color: white;
+    font-size: 150%;
+    border: 2px solid white;
+    border-radius: 5px;
+    margin: 10px;
+    font-family: 'Acme', sans-serif;
+}
+
+.section_title{
+	background-color: #555;
+    color: white;
+	padding: 10px;
+	margin-bottom: 0;
 }
 
 .clearfix:after {

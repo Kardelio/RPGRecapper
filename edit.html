@@ -25,12 +25,25 @@
 </div>
 	<div id="Campaign" class="tabcontent">
 		<h3 class="section_title">Campaign Information</h3>
-		<button id="save_btn_campaign" class="submitButton" onclick="saveDetails()">Save</button>
-		<div id="campaign_information_div">
-			<label>Campaign Title</label><br/>
-			<input type="text" id="campaign_title" onchange="updateData()"/><!--value=""-->
+		<div class="section_title">
+			<p>Complete each section of this form in order to build up the overall data about your campaign, individual sessions will come later...</p>
 		</div>
-		<p>Home is where the heart is..</p>
+		<div style="text-align: center;">
+			<button id="save_btn_campaign" class="successButton" onclick="saveDetails()" align="center">Save</button>
+		</div>
+		<div id="campaign_information_div" class="RPG_data_collector_area">
+			<div class="single_data_div">
+				<label class="data_single_label">Campaign Title</label><br/>
+				<input type="text" id="campaign_title" onchange="updateData()"/><!--value=""-->
+			</div>
+			<div class="single_data_div">
+					<label class="data_single_label">Map</label><br/>
+					<input type="file" id="world_map" onchange="updateData()"/><!--value=""-->
+				</div>
+		</div>
+		<div style="text-align: center;">
+			<button id="save_btn_campaign" class="successButton" onclick="saveDetails()" align="center">Save</button>
+		</div>	
 	</div>
 	
 	<div id="Sessions" class="tabcontent">

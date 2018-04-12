@@ -43,10 +43,16 @@ function campaignLoaderHasFinishedLoadingCampaignData(){
 	populateDataInDOM();
 }
 
+function dealWithUploadedMapImage(){
+    //
+}
+
 function updateData(){
     console.log("Changing data");
     fullCampaignData.campaign_title = document.getElementById("campaign_title").value; 
-    console.log("Data: ", fullCampaignData);    
+    dealWithUploadedMapImage();
+    console.log("Data: ", fullCampaignData);   
+
 }
 
 function saveDetails(){
