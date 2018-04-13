@@ -1,3 +1,8 @@
+input[type=text]{
+	font-family: 'Acme';
+    font-size: 150%;
+}
+
 .data_single_label{
 	font-size: 120%;
 }
@@ -6,10 +11,65 @@
 	margin: 10px;
 }
 
+#addSessionButton{
+	top: 5px;
+    position: relative;
+}
+
+#session_data_collector_area{
+    max-height: 0;
+	padding: 0;
+	transition: max-height 0.25s ease-in;
+}
+
+.floating_action_button{
+	background-color: #00bb00;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background: #00bb00;
+    border: none;
+    outline: none;
+    color: #FFF;
+    font-size: 150%;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    transition: .3s;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	transition: background-color 0.5s ease;
+	
+}
+.floating_action_button:focus {
+	transform:scale(1.0);
+	background-color: #FF4336;
+  }
+
 .RPG_data_collector_area {
 	background-color: rgba(0,0,0,0.3);
     padding: 10px;
     color: white;
+}
+
+#session_list_area span{
+	background-color: yellow;
+    color: black;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#session_list_area a{
+	text-decoration: underline;
+	cursor: default;
+    color: blue;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 90%;
+}
+
+#session_list_area a:active{
+    color: black;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 90%;
 }
 
 .successButton{

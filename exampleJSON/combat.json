@@ -1,0 +1,28 @@
+{
+    "type": "combat",
+    "subtitle":"Battle at Creeks Fall Tower", 
+    "atSpecificMapLocation": 54,
+    "at": null,
+    "heroesPresent": ["O", "V", "S", "D"],                  
+    "enemies":[
+        {
+            "name": "Bandit",
+            "boss": false,                            
+            "number": 9,
+            "token": "media/npcs/Bandit.png",
+            "killers": [
+                "O", "O", "O", "O", "DOG", "D", "D", "S", "S"
+            ]
+        },
+        {
+            "name": "Zayin Rayor",
+            "boss": true,                            
+            "number": 1,
+            "token": "media/npcs/Zayin_Razor.png",
+            "killers": [
+                "V"
+            ]
+        }
+    ],
+    "data": "battleData/s1f1.html"
+}

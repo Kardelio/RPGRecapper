@@ -1,8 +1,11 @@
 <?php
+    $success = false;
     $myFile = "../data/campaign.json";
-    $stringData = $_GET["data"];    
-    // $fh = fopen($myFile, 'w') or die("can't open file");
-    // fwrite($fh, $stringData);
-    // fclose($fh)
-    file_put_contents($myFile, $stringData);
+    $stringData = $_GET["data"];        
+    if (!$data = file_put_contents($myFile, $stringData)) {
+        $success = false;
+    } else {
+        $success = true;        
+    }
+    echo json_encode(array('success' => $success));
 ?>

@@ -1,0 +1,13 @@
+{
+    "type": "travel",
+    "subtitle": "Go deal with Zayin...",
+    "heroesPresent": ["O", "V", "S", "D"],                      
+    "from": {
+        "x": 585,
+        "y": 469
+    },
+    "to": {
+        "x": 628,
+        "y": 518
+    }
+}

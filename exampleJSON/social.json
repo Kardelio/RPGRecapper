@@ -1,0 +1,74 @@
+{
+    "type": "social",
+    "subtitle": "Meeting the Council",
+    "sublocation": "The back of the Broken Egg Tavern",        
+    "atSpecificMapLocation": 7,                   
+    "at": null,
+    "heroesPresent": ["O", "V", "S", "D"],
+    "npcsPresent": [
+        "media/npcs/Grumpt_Hanelbush.png",
+        "media/npcs/Chock_Holt.png",
+        "media/npcs/Svenno_Holt.png",
+        "media/npcs/Nesrakas_Vestanash.png",
+        "media/npcs/Girig_Softpaw.png",
+        "media/npcs/Minera_Lilwynn.png"
+    ],
+    "involved":[
+        {
+            "name": "Nesrakas Vestanash",
+            "token": "media/npcs/Nesrakas_Vestanash.png",
+            "messages":[
+                {
+                    "message": "There is a great evil massing in the south, an evil that goes by the name of Agrolf Hilzer! He is moving across the land claiming lives, enslaving the town's folk and eradicating the human species as he goes...",
+                    "Keywords": [
+                        "Agrolf",
+                        "Hilzer"
+                    ]
+                },
+                {
+                    "message": "We know little to nothing about Agrolf, just that he has generals that do his dirty work for him out in the reaches of Ebarhor...",
+                    "Keywords": [
+                        "generals"
+                    ]
+                }
+            ] 
+        },
+        {
+            "name": "Minera Lilwynn",
+            "token": "media/npcs/Minera_Lilwynn.png",
+            "messages":[
+                {
+                    "message": "One of his general's has recently surfaced and we require your group to find any evidence with this general that tells us more about Agrolf",
+                    "Keywords": [
+                        "Agrolf",
+                        "Hilzer"
+                    ]
+                },
+                {
+                    "message": "The general in question is named Zayin Razor and is held up currently in Creeks Fall Tower a few hours ride south of Starfall",
+                    "Keywords": [
+                        "Zayin",
+                        "Razor",
+                        "Creeks",
+                        "Fall"
+                    ]
+                },
+                {
+                    "message": "Your mission, if you accept is to travel to Creeks Fall and bring back any evidence you can find of Agrolf and his company, do what you will with that monster Zayin, however he deserves a slow painful death.",
+                    "Keywords": []
+                }
+            ] 
+        },
+        {
+            "name": "Girig Softpaw",
+            "token": "media/npcs/Girig_Softpaw.png",
+            "messages":[
+                {
+                    "message": "We can not go ourselves as we are too easily recognised, however we have a plan for you that involves my cart and these here barrels...",
+                    "Keywords": [
+                    ]
+                }
+            ] 
+        }
+    ]
+}

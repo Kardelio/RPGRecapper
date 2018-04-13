@@ -1,0 +1,9 @@
+{
+    "type": "misc",
+    "subtitle": "Orlin in the Sewers",
+    "sublocation": "In the sewer system below the city...",        
+    "atSpecificMapLocation": 2,                   
+    "at": null,
+    "heroesPresent": [ "O"],
+    "description": "Orlin follows a bunch of rats to find the rubbish chute of the Peace Keep beneath the streets, he climbs the pipes to find an entrance into the bottom most layer of the Peace Keep..."                                                        
+}

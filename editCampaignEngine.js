@@ -1,6 +1,8 @@
 fullCampaignData = {};
 allSessionObjects = [];
 allCharacterData = [];
+
+currentNewSession = {};
 //========================================================================
 //===================     Code Body Below     ============================
 //========================================================================
@@ -26,9 +28,20 @@ function openPage(pageName,elmnt,color) {
     elmnt.style.color = "#000";
 }
 
+
 function populateDataInDOM(){
+    document.getElementById("session_list_area").innerHTML = "";
+
 	console.log("Populating the DOM now");
-	document.getElementById("campaign_title").value = fullCampaignData.campaign_title;
+    document.getElementById("campaign_title").value = fullCampaignData.campaign_title;
+    
+    var allSessionListHTML = "";
+    for (let index = 0; index < allSessionObjects.length; index++) {
+        const element = allSessionObjects[index];
+        console.log(element);
+        allSessionListHTML += "<div><a onclick='editASession("+index+")'>Edit</a>Session #"+(index+1)+" - <span>"+element.session_title+"</span></div>";
+    }
+    document.getElementById("session_list_area").innerHTML = allSessionListHTML;
 }
 
 function init(){
@@ -45,14 +58,67 @@ function campaignLoaderHasFinishedLoadingCampaignData(){
 
 function dealWithUploadedMapImage(){
     //
+    //need to take the image and upload it to /media
+    //need to determine the map scales
+
+}
+
+function editASession(num){
+    console.log(num);
+    if(num == null || num == undefined)
+    {
+        console.log("Make a new session");
+        console.log("New session...");
+        currentNewSession = {};
+        var area = document.getElementById("session_data_collector_area");
+        area.innerHTML = "";
+        area.innerHTML = `
+                <div class="single_data_div">
+                    <label class="data_single_label">Session Title</label><br/>
+                    <input type="text" id="session_title" onchange="updateCurrentSession()"/>
+                </div>
+                <div style="text-align: center;">
+                    <button id="save_btn_single_new_session" class="successButton" onclick="saveDetailsOfSession()" align="center">Save Session</button>
+                </div>
+            `
+        area.style.maxHeight = "1000";
+    }
+    else{
+        
+    }
+
+}
+
+function updateCurrentSession(){
+    currentNewSession.session_title = document.getElementById("session_title").value;
+    console.log(currentNewSession);
 }
 
 function updateData(){
-    console.log("Changing data");
     fullCampaignData.campaign_title = document.getElementById("campaign_title").value; 
     dealWithUploadedMapImage();
-    console.log("Data: ", fullCampaignData);   
+}
 
+function saveDetailsOfSession(){
+    //add to campaign json too...
+    var num = allSessionObjects.length + 1;
+    var sessionFileName = "data/session"+num+".json";
+    fullCampaignData.sessions.push(sessionFileName);
+    $.ajax({
+        type: "POST",
+        dataType : 'json',        
+        async: false,
+        url: 'phpscripts/saveANewSession.php',
+        data: { sessionFileName: sessionFileName, sessionData: JSON.stringify(currentNewSession)},
+        success: function (data) {
+            if(data.success)
+            {
+                console.log("Session saved: ");
+                saveDetails();
+            }
+        },
+        error: function() {alert("Error! sesh");}
+    });
 }
 
 function saveDetails(){
@@ -62,13 +128,20 @@ function saveDetails(){
         async: false,
         url: 'phpscripts/saveData.php',
         data: { data: JSON.stringify(fullCampaignData) },
-        success: function () {alert("Thanks!"); },
-        failure: function() {alert("Error!");}
+        success: function (data) {
+            if(data.success)
+            {
+                init();
+            }
+        },
+        error: function() {
+        }
     });
 }
 
 function loadCampaign(){
     var self = this;
+    allSessionObjects = [];    
     $.ajaxSetup({cache:false});
     $.ajax({
         type: 'GET',
@@ -99,6 +172,7 @@ function loadEachSession(iter){
 };
 
 function loadCharacterData(){
+    allCharacterData = [];
     $.getJSON(fullCampaignData.characters, function (result) {
         for(var p = 0; p < result.playable.length; p++)
         {
