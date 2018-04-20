@@ -37,9 +37,13 @@
 				<input type="text" id="campaign_title" onchange="updateData()"/><!--value=""-->
 			</div>
 			<div class="single_data_div">
-					<label class="data_single_label">Map</label><br/>
-					<input type="file" id="world_map" onchange="updateData()"/><!--value=""-->
-				</div>
+				<label class="data_single_label">Map</label><br/>
+				<input type="file" id="world_map" onchange="updateData()"/><!--value=""-->
+			</div>
+			<div class="single_data_div">
+				<label class="data_single_label">Days in a week</label><br/>
+				<input type="number" id="days_in_a_week" onchange="updateData()"/><!--value=""-->
+			</div>
 		</div>
 		<div style="text-align: center;">
 			<button id="save_btn_campaign" class="successButton" onclick="saveDetails()" align="center">Save</button>

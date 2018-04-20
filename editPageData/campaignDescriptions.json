@@ -1,6 +1,6 @@
 {
-    "campaign_title": "The Chains of Ebarhor",
-    "world_map": "media/map.png",
+    "campaign_title": "The overall title of the campaign",
+    "world_map": "bl",
     "map_size_width": 1754,
     "map_size_height": 1240,
     "sessions":[
@@ -11,16 +11,10 @@
     ],
     "characters": "data/characters.json",
     "sounds":{
-        "cat":{
-            "someting": "abc"
-        },
         "background": "media/audio/back.mp3",
         "combat_event": "media/audio/fightO.wav",
         "social_event": "media/audio/talking.wav",
         "travel_event": "media/audio/walking.wav",
-        "eggs":{
-            "poop": "ddd"
-        },
         "level_up_event": "media/audio/lvl.wav"        
     },
     "time_info":{

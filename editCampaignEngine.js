@@ -2,6 +2,12 @@ fullCampaignData = {};
 allSessionObjects = [];
 allCharacterData = [];
 
+dontDisplayTitles = ["sessions","characters"];
+audioFileLocation = "media/audio/";
+heroTokenFileLocation = "media/heroes/";
+tokenFileLocation = "media/npcs/";
+dataFileLocation = "data/";
+
 currentNewSession = {};
 //========================================================================
 //===================     Code Body Below     ============================
@@ -34,12 +40,13 @@ function populateDataInDOM(){
 
 	console.log("Populating the DOM now");
     document.getElementById("campaign_title").value = fullCampaignData.campaign_title;
+    document.getElementById("days_in_a_week").value = fullCampaignData.time_info.days_in_a_week;
     
     var allSessionListHTML = "";
     for (let index = 0; index < allSessionObjects.length; index++) {
         const element = allSessionObjects[index];
         console.log(element);
-        allSessionListHTML += "<div><a onclick='editASession("+index+")'>Edit</a>Session #"+(index+1)+" - <span>"+element.session_title+"</span></div>";
+        allSessionListHTML += "<div class='singleEditRowForSession'><a onclick='editASession("+index+")'>Edit</a>Session #"+(index+1)+" - <span>"+element.session_title+"</span></div>";
     }
     document.getElementById("session_list_area").innerHTML = allSessionListHTML;
 }
@@ -53,7 +60,10 @@ function campaignLoaderHasFinishedLoadingCampaignData(){
     console.log(fullCampaignData);
     console.log(allSessionObjects);
     console.log(allCharacterData);
-	populateDataInDOM();
+    populateDataInDOM();
+    
+    parseFileIntoInputs();
+    parseInputsIntoFile();
 }
 
 function dealWithUploadedMapImage(){
@@ -61,6 +71,18 @@ function dealWithUploadedMapImage(){
     //need to take the image and upload it to /media
     //need to determine the map scales
 
+}
+
+function closeEditSessionBox(){
+    clearAllInputsInEditSession();
+    var area = document.getElementById("session_data_collector_area");
+    area.innerHTML = "";    
+    area.style.padding = "0px";
+    area.style.maxHeight = "0";
+}
+
+function clearAllInputsInEditSession(){
+    $(':input').val('');
 }
 
 function editASession(num){
@@ -72,9 +94,14 @@ function editASession(num){
         currentNewSession = {};
         var area = document.getElementById("session_data_collector_area");
         area.innerHTML = "";
+        area.style.padding = "10px";
         area.innerHTML = `
                 <div class="single_data_div">
-                    <label class="data_single_label">Session Title</label><br/>
+                    <label class="data_single_label">Session Title:</label><br/>
+                    <input type="text" id="session_title" onchange="updateCurrentSession()"/>
+                </div>
+                <div class="single_data_div">
+                    <label class="data_single_label">Time Taken:</label><br/>
                     <input type="text" id="session_title" onchange="updateCurrentSession()"/>
                 </div>
                 <div style="text-align: center;">
@@ -96,7 +123,264 @@ function updateCurrentSession(){
 
 function updateData(){
     fullCampaignData.campaign_title = document.getElementById("campaign_title").value; 
+    fullCampaignData.time_info.days_in_a_week = parseInt(document.getElementById("days_in_a_week").value);
     dealWithUploadedMapImage();
+}
+
+
+function getNiceTitle(original){
+    var out = original.replace(/_/g, " ");
+    return out.charAt(0).toUpperCase() + out.slice(1);
+}
+
+function existsInArray(arr,item){
+    console.log("----> ",item, arr);
+    
+    for(var i = 0; i < arr.length; i++){
+        if(arr[i] == item){
+            console.log("aye ",item, arr);
+            return true;
+        }
+    }
+    return false;    
+}
+
+function getHtmlDependingOnType(obj,key, parents){
+    var overallCleanKey = getNiceTitle(key);
+    var htmlOut = "";
+    if(obj.constructor === String && (obj.indexOf("media") > -1 || obj.indexOf("data") > -1)){
+        console.log("FILE!!");          
+        htmlOut += `
+            <div class="single_data_div">
+                <label class="data_single_label">`+overallCleanKey+`</label><br/>
+                <input type="text" id="`+key+`" onchange="updateData()" data-parent="`+parents+`" value="`+obj+`"/><!--value=""-->
+            </div>
+        `;     
+    }
+    else if(obj.constructor === Object){
+        console.log("Object!!");
+        htmlOut += '<div class="single_data_div">';
+        htmlOut += "<label class='data_single_label'>"+overallCleanKey+"</label><br/>";
+        htmlOut += "<div class='RPG_data_collector_area' data-adult='"+key+"' data-parent='"+parents+"'>";
+        
+        for (var lowerkey in obj) {
+            if (obj.hasOwnProperty(lowerkey)) {
+            var lowerobj = obj[lowerkey];
+            var nicelowerkey = getNiceTitle(lowerkey);
+            console.log(lowerobj);
+            htmlOut += getHtmlDependingOnType(lowerobj,lowerkey,key);
+            }
+        }
+        htmlOut += "</div>";               
+        htmlOut += "</div>";               
+        
+    }
+    else if(obj.constructor === Array){
+        console.log("ARRAY!!");
+        htmlOut += '<div class="single_data_div">';
+        htmlOut += "<label class='data_single_label'>"+overallCleanKey+"</label><br/>";
+        htmlOut += "<div class='RPG_data_collector_area'>";
+        
+        for (var lowerkey in obj) {
+            if (obj.hasOwnProperty(lowerkey)) {
+            var lowerobj = obj[lowerkey];
+            var nicelowerkey = getNiceTitle(lowerkey);
+            console.log(lowerobj);
+            htmlOut += getHtmlDependingOnType(lowerobj,lowerkey,key);
+            }
+        }
+        htmlOut += "</div>";               
+        htmlOut += "</div>";  
+    }
+    else if(obj.constructor === String){
+        console.log("String!!");
+        htmlOut += `
+            <div class="single_data_div">
+                <label class="data_single_label">`+overallCleanKey+`</label><br/>
+                <input type="text" id="`+key+`" onchange="updateData()" data-parent="`+parents+`" value="`+obj+`"/><!--value=""-->
+            </div>
+        `;
+    }
+    else if(obj.constructor === Number){
+        console.log("Number!!");
+        htmlOut += `
+            <div class="single_data_div">
+                <label class="data_single_label">`+overallCleanKey+`</label><br/>
+                <input type="number" id="`+key+`" onchange="updateData()" data-parent="`+parents+`" value="`+obj+`"/><!--value=""-->
+            </div>
+        `;
+    }
+    return htmlOut;
+}
+
+function parseFileIntoInputs(){
+    var outHtml = "";
+
+    for (var key in fullCampaignData) {
+        if (fullCampaignData.hasOwnProperty(key)) {
+           var obj = fullCampaignData[key];
+           console.log(obj,key);
+           if(!existsInArray(dontDisplayTitles,key)){
+                outHtml += getHtmlDependingOnType(obj,key,null);
+           }
+        }
+     }
+    document.getElementById("session_list_area").innerHTML = outHtml;
+     
+}
+
+function buildParentChain(elm,path){
+    var outchain = path;
+    var par = elm.getAttribute("data-parent");
+    if(par != null && par != " " && par != undefined && par != "null"){
+        var adultElm = $("[data-adult='"+par+"']")[0];
+        outchain += "/"+par;
+        return buildParentChain(adultElm, outchain);
+    }else{
+        //get var
+        return path;
+    }
+}
+
+
+function parseInputsIntoFile(){
+    /**
+     * Take all the inputs from a specifc div and turn them automatically into the file
+     */
+    var ex = {
+    };
+    var arrayOfExs=[];
+    var allInputsText = $(":input[type='text']");
+    var allInputsNumber = $(":input[type='number']");
+    for(var i = 0; i < allInputsText.length; i++){
+        var elm = allInputsText[i];
+        var parentChain = buildParentChain(elm,"");
+        console.log(parentChain);
+        if(parentChain == ""){
+            //top level variables
+            ex[elm.id] = elm.value;
+        }
+        else{
+            //requires looping to build obj
+            parentChain = parentChain.substring(1);
+            var split = parentChain.split("/");
+            split.reverse();
+            split.push(elm.id);
+            //if(ex[split]
+            //var outobj = {};
+
+            var strObj = "{";
+            var counter = 0;
+            for(var index = 0; index < split.length; index++)
+            {
+                if(index == (split.length - 1)){
+                    //last one
+                    strObj += '"'+split[index]+'":"'+elm.value+'"';
+                }
+                else{
+                    console.log(split[index]+" doesnt exist");
+                    strObj += '"'+split[index]+'":{';
+                    counter++;
+                }
+            }
+            for(var s = 0; s < counter; s++){
+                strObj += "}";
+            }
+            strObj += "}";   
+
+            console.log("=======>",strObj);
+            if(counter > 0){
+                arrayOfExs.push(JSON.parse(strObj));
+
+            }
+            console.log("=======>",arrayOfExs);
+                     
+            /*
+            string string stirng
+
+            {
+                string:
+                    string:
+                        string:
+            }
+            */
+
+            // var builtPath = "ex";
+            // var str = "{";
+            // for(var s = 0; s < split.length; s++){
+            //     //var oo = ex[split[s]]
+            //     str += split[s]+":{";
+            //     if(ex[split[s]] == undefined){
+            //         console.log(split[s]+" doesnt exist");
+            //     }
+            //     //     console.log(ex[split[s]]);
+            //     //     //eval("ex['"+split[s]+"']")
+                    
+            //     //     builtPath += "['"+split[s]+"'] = {}";
+            //     //     //make it
+                    
+
+                    
+            //     // }
+            //     // else{
+            //     //     console.log("exists: ",ex[split[s]]);
+
+            //     // }
+            //     //eval(builtPath);
+                
+            //     // var ind = split[s];
+            //     // console.log(s, split[s]);
+            //     // outobj[ind] = "sada";
+            //     // console.log(outobj);
+            //     // if(ind != ""){
+            //     //     console.log(s, split[s]);
+                    
+            //     //     //ex[ind] = {};
+            //     // }
+            // }
+            // for(var s = 0; s < split.length; s++){
+            //     str += "}";
+            // }
+
+            // str += "}";
+            // console.log(str);
+            // builtPath += " = {}";
+            // console.log(builtPath);
+            // eval(builtPath);
+            //console.log(outobj);
+            
+            //ex[split[0]] = outobj;            
+        }
+        // var par = elm.getAttribute("data-parent");
+        // //console.log(elm)
+        // if(par != null && par != " " && par != undefined && par != "null"){
+        //     //console.log("HAS A PARENT ELEMENT");
+        //     //console.log(elm.value, par);
+
+        //     var adultElm = $("[data-adult="+par+"]");
+        //     console.log("PARNET: ", adultElm);
+
+        //     // loop back up to get all parents
+        // }
+        // else{
+        //     ex[elm.id] = elm.value;
+
+        // }
+
+        //fullCampaignData.campaign_title = document.getElementById("campaign_title").value; 
+        //fullCampaignData.time_info.days_in_a_week = parseInt(document.getElementById("days_in_a_week").value);
+    }
+    for(var i = 0; i < allInputsNumber.length; i++){
+        var elm = allInputsNumber[i];
+        //console.log(elm.value);
+    }
+    console.log(ex);
+    var overallEx = {};
+    for(var j = 0; j < arrayOfExs.length; j++)
+    {
+        console.log(arrayOfExs[j]);
+        var a = arrayOfExs[j];
+    }
 }
 
 function saveDetailsOfSession(){
@@ -114,6 +398,7 @@ function saveDetailsOfSession(){
             if(data.success)
             {
                 console.log("Session saved: ");
+                closeEditSessionBox();
                 saveDetails();
             }
         },
