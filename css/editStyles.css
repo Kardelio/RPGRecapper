@@ -8,6 +8,14 @@ input[type=number]{
     width: 100px;
 }
 
+span.fileName{
+    padding-left: 1em;
+    background-color: black;
+    padding-right: 1em;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
 .embededObjectSection{
     background-color: black;
 }

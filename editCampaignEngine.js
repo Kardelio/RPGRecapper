@@ -2,11 +2,15 @@ fullCampaignData = {};
 allSessionObjects = [];
 allCharacterData = [];
 
+descriptionData = {};
+
 dontDisplayTitles = ["sessions","characters"];
 audioFileLocation = "media/audio/";
 heroTokenFileLocation = "media/heroes/";
 tokenFileLocation = "media/npcs/";
+mediaFileLocation = "media/";
 dataFileLocation = "data/";
+annoyingFakeFilePath = "C:\\fakepath\\";
 
 currentNewSession = {};
 //========================================================================
@@ -60,11 +64,23 @@ function campaignLoaderHasFinishedLoadingCampaignData(){
     console.log(fullCampaignData);
     console.log(allSessionObjects);
     console.log(allCharacterData);
-    populateDataInDOM();
+    //populateDataInDOM();
     
-    parseFileIntoInputs();
+    document.getElementById("campaign_data_collector_area").innerHTML = parseFileIntoInputs();
     parseInputsIntoFile();
+    console.log(annoyingFakeFilePath);
+    //========================================================================
+    //========================================================================
+    //========================================================================
+    //========================================================================
 }
+
+// function getv(){
+//     var test2 = $('#background').val();
+//     var test = document.getElementById("background");
+//     console.log(test.value);
+//     console.log(test2);
+// }
 
 function dealWithUploadedMapImage(){
     //
@@ -149,11 +165,27 @@ function getHtmlDependingOnType(obj,key, parents){
     var overallCleanKey = getNiceTitle(key);
     var htmlOut = "";
     if(obj.constructor === String && (obj.indexOf("media") > -1 || obj.indexOf("data") > -1)){
-        console.log("FILE!!");          
+        console.log("FILE!!", obj);
+        var previewer = "";
+        var filePre = "";
+        if(obj.indexOf("png") > -1  || obj.indexOf("jpg") > -1 ){
+            previewer = "<br/><img src='"+obj+"' width='200'/>";
+            filePre = mediaFileLocation;
+        } else if(obj.indexOf("mp3") > -1  || obj.indexOf("wav") > -1 ){
+            previewer = `<br/>            
+                <audio controls>
+                    <source src="`+obj+`" type="audio/ogg">
+                    <source src="`+obj+`" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            `;    
+            filePre = audioFileLocation;        
+        }
         htmlOut += `
             <div class="single_data_div">
                 <label class="data_single_label">`+overallCleanKey+`</label><br/>
-                <input type="text" id="`+key+`" onchange="updateData()" data-parent="`+parents+`" value="`+obj+`"/><!--value=""-->
+                <input type="file" id="`+key+`" name="file_`+key+`" onchange="updateData()" data-parent="`+parents+`" data-file-pre="`+filePre+`" style="width: 75px;"/><span class="fileName">`+obj+`</span>
+                `+previewer+`
             </div>
         `;     
     }
@@ -224,8 +256,9 @@ function parseFileIntoInputs(){
                 outHtml += getHtmlDependingOnType(obj,key,null);
            }
         }
-     }
-    document.getElementById("session_list_area").innerHTML = outHtml;
+    }
+    return outHtml;
+    //document.getElementById("session_list_area").innerHTML = outHtml;
      
 }
 
@@ -247,27 +280,24 @@ function parseInputsIntoFile(){
     /**
      * Take all the inputs from a specifc div and turn them automatically into the file
      */
+    // Text...
     var ex = {
     };
     var arrayOfExs=[];
     var allInputsText = $(":input[type='text']");
     var allInputsNumber = $(":input[type='number']");
+    var allInputsFiles = $(":input[type='file']");
     for(var i = 0; i < allInputsText.length; i++){
         var elm = allInputsText[i];
         var parentChain = buildParentChain(elm,"");
         if(parentChain == ""){
-            //top level variables
             ex[elm.id] = elm.value;
         }
         else{
-            //requires looping to build obj
             parentChain = parentChain.substring(1);
             var split = parentChain.split("/");
             split.reverse();
             split.push(elm.id);
-            //if(ex[split]
-            //var outobj = {};
-
             var strObj = "{";
             var counter = 0;
             for(var index = 0; index < split.length; index++)
@@ -287,13 +317,27 @@ function parseInputsIntoFile(){
 
             if(counter > 0){
                 arrayOfExs.push(JSON.parse(strObj));
-
             }
         }
     }
+
     for(var i = 0; i < allInputsNumber.length; i++){
         var elm = allInputsNumber[i];
     }
+
+    for(var i = 0; i < allInputsFiles.length; i++){
+        var elm = allInputsFiles[i];
+        var filenameWithoutMess = elm.value.replace(annoyingFakeFilePath,'');
+        if(filenameWithoutMess != "" && filenameWithoutMess != null && filenameWithoutMess != undefined)
+        {
+            var prePath = elm.getAttribute("data-file-pre");
+            console.log(filenameWithoutMess,prePath);
+        }
+        else{
+            //file not specified please take defautl already.
+        }
+    }
+
     var overallEx = {};
     for(var j = 0; j < arrayOfExs.length; j++)
     {
@@ -302,6 +346,8 @@ function parseInputsIntoFile(){
     }
     overallEx = mergeDeep(overallEx,ex);
     console.log(overallEx);
+
+    //Files...
 }
 
 function mergeDeep (o1, o2) {
@@ -370,8 +416,24 @@ function saveDetails(){
     });
 }
 
+function loadFieldDescriptions(){
+    allSessionObjects = [];    
+    $.ajaxSetup({cache:false});
+    $.ajax({
+        type: 'GET',
+        url: "editPage/campaignDescriptions.json",
+        dataType: 'JSON',
+        success:function(data){
+            descriptionData = data;
+            campaignLoaderHasFinishedLoadingCampaignData();                
+        },
+        error:function(XMLHttpRequest,textStatus,errorThrown){
+            console.log("error", errorThrown);
+        }
+    });
+}
+
 function loadCampaign(){
-    var self = this;
     allSessionObjects = [];    
     $.ajaxSetup({cache:false});
     $.ajax({
@@ -422,6 +484,7 @@ function loadCharacterData(){
             result.npcs[n].type = "npc";
             allCharacterData.push(result.npcs[n]);
         }
-        campaignLoaderHasFinishedLoadingCampaignData();            
+        //campaignLoaderHasFinishedLoadingCampaignData();  
+        loadFieldDescriptions();          
     });
 }

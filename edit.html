@@ -17,8 +17,8 @@
 
 <body>
 	<div>
-	<button class="tablink" onclick="openPage('Campaign', this, 'red')" >Campaign</button>
-	<button class="tablink" onclick="openPage('Sessions', this, 'green')" id="defaultOpen">Sessions</button>
+	<button class="tablink" onclick="openPage('Campaign', this, 'red')" id="defaultOpen">Campaign</button>
+	<button class="tablink" onclick="openPage('Sessions', this, 'green')">Sessions</button>
 	<button class="tablink" onclick="openPage('Characters', this, 'green')">Characters</button>
 	<button class="tablink">Extra</button>
 	<div style="clear: both"></div>
@@ -31,22 +31,24 @@
 		<div style="text-align: center;">
 			<button id="save_btn_campaign" class="successButton" onclick="saveDetails()" align="center">Save</button>
 		</div>
-		<div id="campaign_information_div" class="RPG_data_collector_area">
+		<input type="file" name="asd" id="asd"/>
+		<div class="RPG_data_collector_area" id="campaign_data_collector_area"></div>		
+		<!-- <div id="campaign_information_div" class="RPG_data_collector_area">
 			<div class="single_data_div">
 				<label class="data_single_label">Campaign Title</label><br/>
-				<input type="text" id="campaign_title" onchange="updateData()"/><!--value=""-->
+				<input type="text" id="campaign_title" onchange="updateData()"/>
 			</div>
 			<div class="single_data_div">
 				<label class="data_single_label">Map</label><br/>
-				<input type="file" id="world_map" onchange="updateData()"/><!--value=""-->
+				<input type="file" id="world_map" onchange="updateData()"/>
 			</div>
 			<div class="single_data_div">
 				<label class="data_single_label">Days in a week</label><br/>
-				<input type="number" id="days_in_a_week" onchange="updateData()"/><!--value=""-->
+				<input type="number" id="days_in_a_week" onchange="updateData()"/>
 			</div>
-		</div>
+		</div> -->
 		<div style="text-align: center;">
-			<button id="save_btn_campaign" class="successButton" onclick="saveDetails()" align="center">Save</button>
+			<button id="save_btn_campaign" class="successButton" onclick="parseInputsIntoFile()" align="center">Save</button>
 		</div>	
 	</div>
 	
