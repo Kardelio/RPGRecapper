@@ -82,6 +82,14 @@ function campaignLoaderHasFinishedLoadingCampaignData(){
 //     console.log(test2);
 // }
 
+function uploadFile()
+{
+    var f = document.getElementById("world_map").files[0];
+    console.log(f);
+    var location = "../uploads/";
+    FileUploader.uploadFileToServer(f);
+}
+
 function dealWithUploadedMapImage(){
     //
     //need to take the image and upload it to /media
@@ -184,7 +192,7 @@ function getHtmlDependingOnType(obj,key, parents){
         htmlOut += `
             <div class="single_data_div">
                 <label class="data_single_label">`+overallCleanKey+`</label><br/>
-                <input type="file" id="`+key+`" name="file_`+key+`" onchange="updateData()" data-parent="`+parents+`" data-file-pre="`+filePre+`" style="width: 75px;"/><span class="fileName">`+obj+`</span>
+                <input type="file" id="`+key+`" name="file_`+key+`" onchange="updateData()" data-parent="`+parents+`" data-original-value="`+obj+`" data-file-pre="`+filePre+`" style="width: 75px;"/><span class="fileName">`+obj+`</span>
                 `+previewer+`
             </div>
         `;     
@@ -292,6 +300,7 @@ function parseInputsIntoFile(){
         var parentChain = buildParentChain(elm,"");
         if(parentChain == ""){
             ex[elm.id] = elm.value;
+            arrayOfExs.push(ex);
         }
         else{
             parentChain = parentChain.substring(1);
@@ -328,13 +337,22 @@ function parseInputsIntoFile(){
     for(var i = 0; i < allInputsFiles.length; i++){
         var elm = allInputsFiles[i];
         var filenameWithoutMess = elm.value.replace(annoyingFakeFilePath,'');
+        var fileSingle = elm.files[0];
         if(filenameWithoutMess != "" && filenameWithoutMess != null && filenameWithoutMess != undefined)
         {
             var prePath = elm.getAttribute("data-file-pre");
+            var originalFile = elm.getAttribute("data-original-value");
+            console.log(originalFile);
             console.log(filenameWithoutMess,prePath);
+            console.log(fileSingle);
+            FileUploader.uploadFileToServer(fileSingle,prePath, originalFile, function(data){
+                console.log(data);
+
+                //androidStats.png
+            });
         }
         else{
-            //file not specified please take defautl already.
+            console.log("No file upload for: ", elm);
         }
     }
 
@@ -342,6 +360,7 @@ function parseInputsIntoFile(){
     for(var j = 0; j < arrayOfExs.length; j++)
     {
         var a = arrayOfExs[j];
+        console.log(a);
         overallEx = mergeDeep(a,overallEx);
     }
     overallEx = mergeDeep(overallEx,ex);
@@ -397,6 +416,7 @@ function saveDetailsOfSession(){
         error: function() {alert("Error! sesh");}
     });
 }
+
 
 function saveDetails(){
     $.ajax({
