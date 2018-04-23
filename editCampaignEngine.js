@@ -255,7 +255,6 @@ function parseInputsIntoFile(){
     for(var i = 0; i < allInputsText.length; i++){
         var elm = allInputsText[i];
         var parentChain = buildParentChain(elm,"");
-        console.log(parentChain);
         if(parentChain == ""){
             //top level variables
             ex[elm.id] = elm.value;
@@ -274,11 +273,9 @@ function parseInputsIntoFile(){
             for(var index = 0; index < split.length; index++)
             {
                 if(index == (split.length - 1)){
-                    //last one
                     strObj += '"'+split[index]+'":"'+elm.value+'"';
                 }
                 else{
-                    console.log(split[index]+" doesnt exist");
                     strObj += '"'+split[index]+'":{';
                     counter++;
                 }
@@ -288,100 +285,49 @@ function parseInputsIntoFile(){
             }
             strObj += "}";   
 
-            console.log("=======>",strObj);
             if(counter > 0){
                 arrayOfExs.push(JSON.parse(strObj));
 
             }
-            console.log("=======>",arrayOfExs);
-                     
-            /*
-            string string stirng
-
-            {
-                string:
-                    string:
-                        string:
-            }
-            */
-
-            // var builtPath = "ex";
-            // var str = "{";
-            // for(var s = 0; s < split.length; s++){
-            //     //var oo = ex[split[s]]
-            //     str += split[s]+":{";
-            //     if(ex[split[s]] == undefined){
-            //         console.log(split[s]+" doesnt exist");
-            //     }
-            //     //     console.log(ex[split[s]]);
-            //     //     //eval("ex['"+split[s]+"']")
-                    
-            //     //     builtPath += "['"+split[s]+"'] = {}";
-            //     //     //make it
-                    
-
-                    
-            //     // }
-            //     // else{
-            //     //     console.log("exists: ",ex[split[s]]);
-
-            //     // }
-            //     //eval(builtPath);
-                
-            //     // var ind = split[s];
-            //     // console.log(s, split[s]);
-            //     // outobj[ind] = "sada";
-            //     // console.log(outobj);
-            //     // if(ind != ""){
-            //     //     console.log(s, split[s]);
-                    
-            //     //     //ex[ind] = {};
-            //     // }
-            // }
-            // for(var s = 0; s < split.length; s++){
-            //     str += "}";
-            // }
-
-            // str += "}";
-            // console.log(str);
-            // builtPath += " = {}";
-            // console.log(builtPath);
-            // eval(builtPath);
-            //console.log(outobj);
-            
-            //ex[split[0]] = outobj;            
         }
-        // var par = elm.getAttribute("data-parent");
-        // //console.log(elm)
-        // if(par != null && par != " " && par != undefined && par != "null"){
-        //     //console.log("HAS A PARENT ELEMENT");
-        //     //console.log(elm.value, par);
-
-        //     var adultElm = $("[data-adult="+par+"]");
-        //     console.log("PARNET: ", adultElm);
-
-        //     // loop back up to get all parents
-        // }
-        // else{
-        //     ex[elm.id] = elm.value;
-
-        // }
-
-        //fullCampaignData.campaign_title = document.getElementById("campaign_title").value; 
-        //fullCampaignData.time_info.days_in_a_week = parseInt(document.getElementById("days_in_a_week").value);
     }
     for(var i = 0; i < allInputsNumber.length; i++){
         var elm = allInputsNumber[i];
-        //console.log(elm.value);
     }
-    console.log(ex);
     var overallEx = {};
     for(var j = 0; j < arrayOfExs.length; j++)
     {
-        console.log(arrayOfExs[j]);
         var a = arrayOfExs[j];
+        overallEx = mergeDeep(a,overallEx);
     }
+    overallEx = mergeDeep(overallEx,ex);
+    console.log(overallEx);
 }
+
+function mergeDeep (o1, o2) {
+    var tempNewObj = o1;
+
+    if (o1.length === undefined && typeof o1 !== "number") {
+        $.each(o2, function(key, value) {
+            if (o1[key] === undefined) {
+                tempNewObj[key] = value;
+            } else {
+                tempNewObj[key] = mergeDeep(o1[key], o2[key]);
+            }
+        });
+    }
+    else if (o1.length > 0 && typeof o1 !== "string") {
+        $.each(o2, function(index) {
+            if (JSON.stringify(o1).indexOf(JSON.stringify(o2[index])) === -1) {
+                tempNewObj.push(o2[index]);
+            }
+        });
+    }
+    else {
+        tempNewObj = o2;
+    }
+    return tempNewObj;
+};
 
 function saveDetailsOfSession(){
     //add to campaign json too...
